@@ -1,5 +1,5 @@
 if(!require(pacman)){
-  install.packages("pacman")
+  install.packages("pacman", repos = "https://cran.rstudio.com/")
 }
 library(pacman)
 
