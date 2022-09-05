@@ -1,0 +1,275 @@
+Study,Outcome,Measurement,Months post-treatment,tMean,tSD,tN,cMean,cSD,cN,CBT,Medication,Sessions,Mode,ACT
+Alessi et al. 2016,SOL,Diary,0,18.70,21.01,106,36.30,19.69,53,full,yes,high,NA,One
+Alessi et al. 2016,WASO,Diary,0,24.70,29.42,106,44.70,28.60,53,full,yes,high,NA,One
+Alessi et al. 2016,TWT,Diary,0,59.10,53.58,106,125.10,51.63,53,full,yes,high,NA,One
+Alessi et al. 2016,SE,Diary,0,85.90,11.03,106,76.20,10.40,53,full,yes,high,NA,One
+Alessi et al. 2016,SE,Actigraphy,0,84.70,6.83,106,82.50,7.06,53,full,yes,high,NA,One
+Buysse et al. 2011,SOL,Diary,0,19.71,19.80,39,30.17,19.61,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,WASO,Diary,0,28.02,32.22,39,47.67,31.81,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,TST,Diary,0,339.47,66.45,39,358.39,65.14,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,SE,Diary,0,87.33,9.55,39,82.25,9.30,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,SQ (1-100),Diary,0,64.39,15.36,39,55.15,15.37,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,SOL,Actigraphy,0,12.62,27.98,39,19.87,15.24,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,WASO,Actigraphy,0,46.62,24.92,39,55.38,25.11,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,TST,Actigraphy,0,338.16,50.83,39,370.44,50.72,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,SE,Actigraphy,0,82.82,7.24,39,79.99,7.27,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,SOL,Polysomnography,0,29.21,30.04,39,25.59,29.98,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,WASO,Polysomnography,0,85.26,53.02,39,92.46,53.00,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,TST,Polysomnography,0,324.82,58.89,39,333.31,58.88,40,behavioural,yes,low,individual,Two
+Buysse et al. 2011,SE,Polysomnography,0,74.86,10.43,39,74.16,10.37,40,behavioural,yes,low,individual,Two
+Edinger et al. 2001,TST,Diary,0,360.00,42.00,25,361.00,42.00,25,behavioural,no,high,individual,NA
+Edinger et al. 2001,TST,Polysomnography,0,372.40,53.00,25,334.00,53.00,25,behavioural,no,high,individual,NA
+Edinger et al. 2001,MWASO,Diary,0,28.10,21.00,25,47.10,21.00,25,behavioural,no,high,individual,NA
+Edinger et al. 2001,MWASO,Polysomnography,0,30.10,44.50,25,66.40,45.00,25,behavioural,no,high,individual,NA
+Edinger et al. 2001,TWASO,Diary,0,21.10,32.00,25,47.00,31.50,25,behavioural,no,high,individual,NA
+Edinger et al. 2001,TWASO,Polysomnography,0,4.20,10.00,25,12.40,10.00,25,behavioural,no,high,individual,NA
+Edinger et al. 2001,SE,Diary,0,84.30,8.50,25,76.20,8.00,25,behavioural,no,high,individual,NA
+Edinger et al. 2001,SE,Polysomnography,0,85.50,9.50,25,75.70,10.00,25,behavioural,no,high,individual,NA
+Edinger et al. 2001,SQ,Diary,0,3.40,0.50,25,3.10,0.50,25,behavioural,no,high,individual,NA
+Edinger et al. 2007,SE,Diary,0,84.00,6.60,24,80.10,5.80,11,behavioural,no,low,individual,Two
+Edinger et al. 2007,SE,Actigraphy,0,77.30,8.90,24,77.00,4.50,11,behavioural,no,low,individual,Two
+Edinger et al. 2007,WASO,Diary,0,51.40,25.40,24,73.10,24.10,11,behavioural,no,low,individual,Two
+Edinger et al. 2007,TWT,Diary,0,69.30,29.80,24,88.70,27.00,11,behavioural,no,low,individual,Two
+Edinger et al. 2007,TWT,Actigraphy,0,98.30,40.10,24,103.40,24.80,11,behavioural,no,low,individual,Two
+Edinger et al. 2007,TST,Diary,0,367.20,46.00,24,376.30,37.10,11,behavioural,no,low,individual,Two
+Edinger et al. 2007,TST,Actigraphy,0,330.00,42.20,24,336.00,40.70,11,behavioural,no,low,individual,Two
+Edinger et al. 2007,SOL,Diary,0,17.90,10.30,24,15.60,9.10,11,behavioural,no,low,individual,Two
+Edinger et al. 2007,SOL,Actigraphy,0,6.80,6.00,24,NA,NA,NA,behavioural,no,low,individual,Two
+Edinger et al. 2009,TST,Diary,0,371.60,97.05,20,365.10,89.89,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,TST,Actigraphy,0,326.90,106.44,20,341.20,97.94,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,SOL,Diary,0,23.30,20.12,20,27.80,19.68,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,SOL,Actigraphy,0,13.80,14.31,20,18.10,13.42,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,WASO,Diary,0,30.00,33.09,20,49.30,29.52,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,WASO,Actigraphy,0,59.90,31.75,20,62.50,28.62,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,SE,Diary,0,86.80,13.86,20,82.20,10.73,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,SE,Actigraphy,0,80.60,12.52,20,79.00,11.63,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,TST,Diary,0,344.50,90.34,21,386.40,104.20,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,TST,Actigraphy,0,330.90,102.86,21,349.00,113.15,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,SOL,Diary,0,28.10,20.12,21,31.50,20.57,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,SOL,Actigraphy,0,17.30,13.86,21,20.80,14.76,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,WASO,Diary,0,35.90,29.07,21,44.50,30.86,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,WASO,Actigraphy,0,60.90,28.17,21,56.30,38.01,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,SE,Diary,0,82.70,10.73,21,83.00,12.07,20,behavioural,yes,low,individual,Two
+Edinger et al. 2009,SE,Actigraphy,0,79.70,11.63,21,80.50,13.42,20,behavioural,yes,low,individual,Two
+Epstein et al. 2012,SOL,Diary,0,20.46,18.44,41,43.24,20.08,50,behavioural,no,high,group,Two
+Epstein et al. 2012,WASO,Diary,0,32.38,26.25,41,66.91,28.99,50,behavioural,no,high,group,Two
+Epstein et al. 2012,TST,Diary,0,374.00,39.96,41,338.26,44.12,50,behavioural,no,high,group,Two
+Epstein et al. 2012,TIB,Diary,0,446.65,40.34,41,496.19,44.69,50,behavioural,no,high,group,Two
+Epstein et al. 2012,SE,Diary,0,84.14,7.56,41,68.29,8.34,50,behavioural,no,high,group,Two
+Epstein et al. 2012,SQ,Diary,0,2.96,0.38,41,2.58,0.42,50,behavioural,no,high,group,Two
+Epstein et al. 2012,SOL,Actigraphy,0,9.57,17.67,41,24.75,19.02,50,behavioural,no,high,group,Two
+Epstein et al. 2012,WASO,Actigraphy,0,29.35,17.74,41,40.13,19.09,50,behavioural,no,high,group,Two
+Epstein et al. 2012,TST,Actigraphy,0,394.97,59.49,41,400.52,63.99,50,behavioural,no,high,group,Two
+Epstein et al. 2012,TIB,Actigraphy,0,445.04,61.28,41,478.47,66.04,50,behavioural,no,high,group,Two
+Epstein et al. 2012,SE,Actigraphy,0,88.82,7.17,41,83.69,7.71,50,behavioural,no,high,group,Two
+Espie et al. 2007,SOL,Diary,0,37.20,42.90,107,55.70,42.20,94,full,yes,high,group,Two
+Espie et al. 2007,WASO,Diary,0,66.10,50.30,107,76.60,53.10,94,full,yes,high,group,Two
+Espie et al. 2007,SE,Diary,0,77.10,15.60,107,72.70,16.70,94,full,yes,high,group,Two
+Espie et al. 2007,TST,Diary,0,344.40,71.40,107,354.60,86.40,94,full,yes,high,group,Two
+Espie et al. 2007,SOL,Actigraphy,0,22.70,22.80,107,20.70,22.20,94,full,yes,high,group,Two
+Espie et al. 2007,WASO,Actigraphy,0,59.00,25.30,107,53.80,23.70,94,full,yes,high,group,Two
+Espie et al. 2007,SE,Actigraphy,0,82.70,5.71,107,84.30,4.00,94,full,yes,high,group,Two
+Friedman et al. 2000,TIB,Actigraphy,0,426.80,31.60,16,475.10,80.30,11,behavioural,no,low,individual,One
+Friedman et al. 2000,TST,Actigraphy,0,378.60,18.50,16,422.20,55.40,11,behavioural,no,low,individual,One
+Friedman et al. 2000,SE,Actigraphy,0,89.10,6.30,16,89.40,6.60,11,behavioural,no,low,individual,One
+Friedman et al. 2000,SOL,Actigraphy,0,11.80,8.20,16,15.30,11.10,11,behavioural,no,low,individual,One
+Friedman et al. 2000,WASO,Actigraphy,0,30.40,26.70,16,27.60,39.00,11,behavioural,no,low,individual,One
+Friedman et al. 2000,TIB,Diary,0,419.00,42.10,16,476.10,63.60,11,behavioural,no,low,individual,One
+Friedman et al. 2000,TST,Diary,0,337.40,64.40,16,358.90,37.80,11,behavioural,no,low,individual,One
+Friedman et al. 2000,SE,Diary,0,80.60,13.20,16,76.20,9.70,11,behavioural,no,low,individual,One
+Friedman et al. 2000,SOL,Diary,0,21.80,23.20,16,23.60,22.20,11,behavioural,no,low,individual,One
+Friedman et al. 2000,WASO,Diary,0,39.30,31.70,16,54.30,50.00,11,behavioural,no,low,individual,One
+Friedman et al. 2000,TIB,Polysomnography,0,394.10,30.60,8,428.50,62.40,4,behavioural,no,low,individual,One
+Friedman et al. 2000,TST,Polysomnography,0,335.60,46.80,8,383.90,43.10,4,behavioural,no,low,individual,One
+Friedman et al. 2000,SE,Polysomnography,0,84.40,8.70,8,90.10,4.00,4,behavioural,no,low,individual,One
+Friedman et al. 2000,SOL,Polysomnography,0,7.50,9.50,8,11.60,10.90,4,behavioural,no,low,individual,One
+Friedman et al. 2000,WASO,Polysomnography,0,44.00,17.60,8,29.00,17.70,4,behavioural,no,low,individual,One
+Harris et al. 2012,SOL,Diary,0,38.94,29.39,20,68.65,37.72,20,behavioural,no,low,individual,Two
+Harris et al. 2012,TST,Diary,0,387.95,57.36,20,350.26,76.76,20,behavioural,no,low,individual,Two
+Harris et al. 2012,WASO,Diary,0,42.66,37.53,20,80.31,57.38,20,behavioural,no,low,individual,Two
+Harris et al. 2012,SE,Diary,0,81.57,7.34,20,68.24,14.14,20,behavioural,no,low,individual,Two
+Harris et al. 2012,SOL,Actigraphy,0,28.36,15.6,20,43.01,42.64,20,behavioural,no,low,individual,Two
+Harris et al. 2012,TST,Actigraphy,0,365.12,65.98,20,368.50,72.74,20,behavioural,no,low,individual,Two
+Harris et al. 2012,WASO,Actigraphy,0,92.47,44,20,100.19,46.49,20,behavioural,no,low,individual,Two
+Harris et al. 2012,SE,Actigraphy,0,75.61,9.82,20,71.92,11.91,20,behavioural,no,low,individual,Two
+Irwin et al. 2014,TST,Diary,0,381.80,61.52,50,372.10,124.00,25,full,no,high,group,NA
+Irwin et al. 2014,TST,Polysomnography,0,383.60,43.80,50,378.80,53.70,25,full,no,high,group,NA
+Irwin et al. 2014,SOL,Diary,0,20.70,14.14,50,29.10,23.50,25,full,no,high,group,NA
+Irwin et al. 2014,SOL,Polysomnography,0,19.20,23.00,50,22.30,22.10,25,full,no,high,group,NA
+Irwin et al. 2014,SE,Diary,0,83.30,8.49,50,74.50,19.00,25,full,no,high,group,NA
+Irwin et al. 2014,SE,Polysomnography,0,80.80,8.90,50,79.50,10.30,25,full,no,high,group,NA
+Irwin et al. 2014,WASO,Diary,0,32.80,25.46,50,54.60,40.50,25,full,no,high,group,NA
+Irwin et al. 2014,WASO,Polysomnography,0,73.50,36.10,50,75.10,43.00,25,full,no,high,group,NA
+Lovato et al. 2014,WASO,Diary,0,54.60,55.64,86,130.80,54.31,32,full,no,low,group,One
+Lovato et al. 2014,SE,Diary,0,82.64,12.52,86,69.77,12.56,32,full,no,low,group,One
+Lovato et al. 2014,NWAK,Diary,0,2.01,1.02,86,2.33,1.07,32,full,no,low,group,One
+Lovato et al. 2014,SOL,Diary,0,20.00,18.55,86,25.00,22.63,32,full,no,low,group,One
+Lovato et al. 2014,TST,Diary,0,339.60,61.21,86,333.60,61.09,32,full,no,low,group,One
+Lovato et al. 2014,WASO,Actigraphy,0,37.80,27.82,86,50.40,30.55,32,full,no,low,group,One
+Lovato et al. 2014,TST,Actigraphy,0,355.80,55.64,86,417.00,61.09,32,full,no,low,group,One
+Lovato et al. 2014,SE,Actigraphy,0,85.33,7.88,86,84.40,8.43,32,full,no,low,group,One
+Lovato et al. 2016,WASO,Diary,0,52.20,55.87,30,147.60,59.40,9,full,no,low,group,One
+Lovato et al. 2016,SE,Diary,0,81.89,12.82,30,68.02,13.23,9,full,no,low,group,One
+Lovato et al. 2016,NWAK,Diary,0,2.05,1.04,30,2.12,1.08,9,full,no,low,group,One
+Lovato et al. 2016,SOL,Diary,0,18.60,23.00,30,29.40,21.60,9,full,no,low,group,One
+Lovato et al. 2016,TST,Diary,0,330.00,62.44,30,323.40,63.00,9,full,no,low,group,One
+Lovato et al. 2016,SOL,Actigraphy,0,13.80,9.86,30,6.00,10.80,9,full,no,low,group,One
+Lovato et al. 2016,WASO,Actigraphy,0,43.20,29.58,30,45.00,30.60,9,full,no,low,group,One
+Lovato et al. 2016,TST,Actigraphy,0,339.60,52.58,30,390.00,57.60,9,full,no,low,group,One
+Lovato et al. 2016,SE,Actigraphy,0,82.99,8.00,30,85.57,8.34,9,full,no,low,group,One
+Lovato et al. 2016,WASO,Diary,0,61.20,58.59,33,127.20,57.54,19,full,no,low,group,One
+Lovato et al. 2016,SE,Diary,0,80.88,13.04,33,70.75,12.90,19,full,no,low,group,One
+Lovato et al. 2016,NWAK,Diary,0,2.02,1.03,33,2.54,1.05,19,full,no,low,group,One
+Lovato et al. 2016,SOL,Diary,0,28.20,20.68,33,24.60,20.92,19,full,no,low,group,One
+Lovato et al. 2016,TST,Diary,0,335.40,62.04,33,343.20,62.77,19,full,no,low,group,One
+Lovato et al. 2016,SOL,Actigraphy,0,10.20,10.34,33,12.00,13.08,19,full,no,low,group,One
+Lovato et al. 2016,WASO,Actigraphy,0,37.80,31.02,33,52.80,31.38,19,full,no,low,group,One
+Lovato et al. 2016,TST,Actigraphy,0,362.40,55.15,33,429.00,60.15,19,full,no,low,group,One
+Lovato et al. 2016,SE,Actigraphy,0,85.56,8.50,33,84.64,8.80,19,full,no,low,group,One
+Morin et al. 1993,SOL,Diary,0,20.62,11.65,12,31.18,28.30,12,full,no,high,group,NA
+Morin et al. 1993,SOL,Polysomnography,0,15.46,10.41,12,19.83,11.84,12,full,no,high,group,NA
+Morin et al. 1993,WASO,Diary,0,28.75,16.55,12,63.69,51.35,12,full,no,high,group,NA
+Morin et al. 1993,WASO,Polysomnography,0,35.35,20.90,12,53.85,43.38,12,full,no,high,group,NA
+Morin et al. 1993,EMA,Diary,0,21.02,16.02,12,37.90,26.12,12,full,no,high,group,NA
+Morin et al. 1993,EMA,Polysomnography,0,12.83,10.01,12,27.67,29.06,12,full,no,high,group,NA
+Morin et al. 1993,TWT,Diary,0,70.53,28.92,12,132.75,75.45,12,full,no,high,group,NA
+Morin et al. 1993,TWT,Polysomnography,0,63.10,18.36,12,101.02,50.05,12,full,no,high,group,NA
+Morin et al. 1993,TST,Diary,0,341.40,42.48,12,318.93,70.34,12,full,no,high,group,NA
+Morin et al. 1993,TST,Polysomnography,0,355.08,38.82,12,362.15,44.81,12,full,no,high,group,NA
+Morin et al. 1993,SE,Diary,0,82.81,6.85,12,70.88,15.20,12,full,no,high,group,NA
+Morin et al. 1993,SE,Polysomnography,0,84.58,4.83,12,78.21,10.18,12,full,no,high,group,NA
+Taylor et al. 2014,SE,Diary,0,95.48,3.43,16,84.40,13.63,13,full,no,high,individual,One
+Taylor et al. 2014,TST,Diary,0,452.20,57.35,16,452.00,59.50,13,full,no,high,individual,One
+Taylor et al. 2014,SOL,Diary,0,12.18,7.45,16,49.44,45.42,13,full,no,high,individual,One
+Taylor et al. 2014,NWAK,Diary,0,0.66,0.92,16,0.81,0.94,13,full,no,high,individual,One
+Taylor et al. 2014,WASO,Diary,0,5.18,7.16,16,11.05,22.57,13,full,no,high,individual,One
+Taylor et al. 2014,TWAK,Diary,0,4.24,6.25,16,12.50,11.91,13,full,no,high,individual,One
+Taylor et al. 2014,SQ,Diary,0,7.55,1.17,16,5.81,1.10,13,full,no,high,individual,One
+Taylor et al. 2014,SE,Actigraphy,0,85.70,3.61,16,83.47,6.61,13,full,no,high,individual,One
+Taylor et al. 2014,TST,Actigraphy,0,421.62,67.75,16,440.16,56.09,13,full,no,high,individual,One
+Taylor et al. 2014,SOL,Actigraphy,0,15.02,8.02,16,24.65,23.19,13,full,no,high,individual,One
+Taylor et al. 2014,NWAK,Actigraphy,0,34.66,10.02,16,37.97,9.78,13,full,no,high,individual,One
+Taylor et al. 2014,WASO,Actigraphy,0,40.60,10.77,16,39.80,20.09,13,full,no,high,individual,One
+Taylor et al. 2014,TWAK,Actigraphy,0,14.68,8.09,16,18.47,12.55,13,full,no,high,individual,One
+Taylor et al. 2017,SE,Diary,0,84.50,12.64,33,73.10,13.21,33,full,yes,high,individual,One
+Taylor et al. 2017,TST,Diary,0,330.00,68.93,33,318.00,68.93,33,full,yes,high,individual,One
+Taylor et al. 2017,SOL,Diary,0,24.90,27.00,33,50.10,27.57,33,full,yes,high,individual,One
+Taylor et al. 2017,NWAK,Diary,0,1.70,1.72,33,2.20,1.72,33,full,yes,high,individual,One
+Taylor et al. 2017,WASO,Diary,0,22.50,35.62,33,47.90,36.19,33,full,yes,high,individual,One
+Taylor et al. 2017,SQ,Diary,0,2.30,0.57,33,1.70,0.57,33,full,yes,high,individual,One
+Taylor et al. 2017,SE,Actigraphy,0,73.30,11.49,33,73.20,9.77,33,full,yes,high,individual,One
+Taylor et al. 2017,TST,Actigraphy,0,288.00,68.93,33,318.00,68.93,33,full,yes,high,individual,One
+Taylor et al. 2017,SOL,Actigraphy,0,20.70,27.57,33,36.00,24.13,33,full,yes,high,individual,One
+Taylor et al. 2017,NWAK,Actigraphy,0,30.00,12.06,33,28.70,10.34,33,full,yes,high,individual,One
+Taylor et al. 2017,WASO,Actigraphy,0,49.30,22.98,33,47.00,20.11,33,full,yes,high,individual,One
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,

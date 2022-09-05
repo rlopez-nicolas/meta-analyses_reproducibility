@@ -1,0 +1,221 @@
+---
+title: "Analytical reproducibility of published meta-analyses on clinical psychological
+  interventions"
+shorttitle: "Meta-analyses reproducibility"
+leftheader: "Lopez-Nicolas et al."
+
+author:
+ - name: "Rubén López-Nicolás"
+   affiliation: "1"
+   corresponding: yes
+   adress: "Facultad de Psicología, Campus de Espinardo, Universidad de Murcia, edificio n° 31, 30100, Murcia, Spain"
+   email: "rlopez@um.es"
+ - name: "Daniel Lakens"
+   affiliation: "2"
+ - name: "Jose A. López-López"
+   affiliation: "1"
+ - name: "Maria Rubio-Aparicio"
+   affiliation: "3"
+ - name: "Carmen López-Ibáñez"
+   affiliation: "1"
+ - name: "Desirée Blázquez-Rincón"
+   affiliation: "1"
+ - name: "Alejandro Sandoval-Lentisco"
+   affiliation: "1"
+ - name: "Julio Sánchez-Meca"
+   affiliation: "1"
+    
+affiliation: 
+ - id: "1"
+   institution: "University of Murcia, Spain"
+ - id: "2"
+   institution: "Eindhoven University of Technology, The Netherlands"
+ - id: "3"
+   institution: "University of Alicante, Spain"
+    
+author_note: |
+ All materials, data, and analysis script coded have been made publicly available on the Open Science Framework: https://osf.io/6cmzh/. This research has been funded with a grant from the Spanish Ministry of Science and Innovation by FEDER funds (Project nº PID2019-104080GB-I00), and by a predoctoral grant (FPU18/04805) from the Spanish Ministry of Universities.The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
+  
+abstract: |
+  Nowadays, meta-analysis is one of the most useful and powerful research approaches, however, this relevance relies on its credibility. In recent years different concerns on credibility of psychological research have emerged. Analytical reproducibility of scientific results could be considered as the minimal threshold of it.  In this study, our purpose was to assess the analytical reproducibility of a set of meta-analyses, as well as the reusability of the data as it was available. From a random sample of papers containing at least one meta-analysis on effectiveness of interventions in psychology used in a previous study, 217 meta-analyses were selected. We first tried to retrieve the original data by recovering a data file, recoding the data from document files (pdf, doc) or on request. Second, through a multi-stage workflow, we tried to reproduce the main results of each meta-analysis using these data. The original data were retrieved for 146 meta-analyses from different sources. Of these, in a first stage 52 showed a discrepancy larger than 5% in the main results, in 25 of them this discrepancy was solved with minor adjustments, or correction of coding errors. In the remaining 27, different issues were identified in an in-depth review of the papers, such as: reporting inconsistencies, lack of some data or transcription errors. Current practices of data sharing in meta-analyses hamper the reusability of the meta-analyses. On the other hand, the implementation of new tools would help to avoid certain errors in the meta-analysis reporting process.
+
+keywords: "meta-analysis, reproducibility, data sharing, data reusability, research synthesis"
+
+bibliography: ["meta-analyses_reproducibility.bib"]
+
+figsintext        : yes
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+lineno            : no
+mask              : no
+csl               : "apa.csl"
+
+class             : "jou, a4paper"
+output            : papaja::apa6_pdf
+header-includes:
+   - \usepackage{caption}
+   - \captionsetup[table]{textfont={it}, labelfont={bf}, singlelinecheck=false, labelsep=newline}
+   - \captionsetup[figure]{textfont={it}, labelfont={bf}, singlelinecheck=false, labelsep=newline}
+---
+
+Nowadays, meta-analysis is widely considered as one of the most useful and powerful research approaches. Given the ongoing growth in the number of scientific publications [@bornmann2021], evidence synthesis approaches -such as meta-analysis- are becoming increasingly relevant. This relevance rests on their credibility, which can be threatened by a lack of rigorous application or poor-quality reporting [@gurevitch2018]. Therefore, given their importance and their role as a useful guide to evidence-based practice, these threats to their credibility need to be closely monitored.
+In recent years different concerns on credibility -based on reproducibility and replicability issues- of psychological research -and of other scientific disciplines- have emerged. Several projects have systematically attempted to assess the replicability and reproducibility of different scientific published results (e.g., [@camerer2018; @errington2021a; @klein2014a; @opensciencecollaboration2015]. Those initiatives showed many failures to replicate the published results. In this context, the empirical assessment of scientific published results credibility has become a major task for the scientific community.
+
+There are different approaches to the empirical assessment of scientific credibility or confidence. Reproducibility refers to the attempt to obtain the same results as in the original publication, using the same data and the same analytical procedure. Robustness refers to the assessment of the sensitivity of the originally published results and conclusions to variations in the original analytical strategy using the same data. Replicability is a core principle of the scientific method and refers to the fact that the same scientific evidence should be observed when independent researchers try to answer the same research question from the same approach at different moments using different data. In other words, obtaining the same results, using different data and answering the same question [@nationalacademiesofsciencesengineeringandmedicine2019; @nosek2022]. In this project we focus on the reproducibility of meta-analyses.
+
+The reproducibility of all published scientific results could be considered as the minimal threshold of scientific credibility [@hardwicke2021]. Different approaches can be adopted for the empirical assessment of reproducibility, for instance @nosek2022 make the distinction between process reproducibility and outcome reproducibility. Following this framework, a process reproducibility assessment could be carried out reviewing the availability of the materials, data, and precise details of the analytical strategy in the report or in an analysis script file required to proceed with the reproduction attempt. On the other hand, an outcome reproducibility assessment would be carried out when the required elements are retrievable, and the reproduction attempt proceeds. It is worth noting that, depending on how the analytical details are available, the challenges, implications and workload of these outcome reproducibility checks are different. The availability of the original analysis script code (i.e., the original computational instructions in a programming language) facilitates reproducibility analysis by simply re-running it, although this is seldom available [@hardwicke2020; @hardwicke2022; @lopez-nicolas2021]. When only a summary is available in the research reports (which is the most common scenario in practice), a task of reconstruction of the original analysis scheme is required. The challenges and implications of failed reproductions in both cases may be of a different nature. 
+
+In the meta-analytic arena, some reproducibility attempts have been carried out in recent years. For instance, some process reproducibility assessments have shown an important lack of data availability in machine-readable formats, and an almost complete absence of analysis script code availability [@lopez-nicolas2021; @polanin2020]. Furthermore, some outcome reproducibility assessments have shown a considerable number of failures when trying to reproduce the primary effect sizes of some published meta-analyses by recollecting primary data from primary studies [@gotzsche2007; @maassen2020; @tendal2009] possibly due to lack of details on how primary effect sizes were selected and computed. In these outcome reproducibility studies, the main task entails reconstructing the original data by retrieving them from the source, namely the included primary studies. Thus, their assessment focus is on this stage of the analysis pipeline of a meta-analysis, which usually involves decisions on how to deal with the multiplicity of effects in the primary studies and the computation process of standardized effect sizes. 
+
+Usually, reproducibility studies use the original data available from the original authors (e.g., [@artner2020; @hardwicke2021; @hardwicke2018]. This puts the focus of the assessment at a different stage of the research pipeline: reusability of the available data, challenges for the reconstruction of the original analysis scheme, reporting errors, etc. Therefore, in order to carry out a reproducibility analysis in this way, the original data must be available. Although data availability seems to have improved in the last years [@hardwicke2018; @tedersoo2021; @wallach2018], systematic reviews and meta-analyses appear to be a special case. Typically, the data collected for a meta-analysis is study-level summary data extracted from published primary studies and is commonly reported in the paper itself through tables or forest plots. This may lead to the idea that common data sharing practices do not apply to meta-analysis. For instance, @page2022 analysed the content of data availability statements from a set of meta-analyses published in 2020. Only 31% included a data availability statement and only 13% of these included a link to access the data openly, with 23% stating that all relevant data are available in the paper itself, 10% stating that data sharing is no applicable as no datasets were generated, 8% stating that data sharing is no applicable as the data is drawn from already published literature, and 42% stating that data were available upon request. It is surprising that, even just considering meta-analyses that included a data availability statement, some of them assume that such practices do not apply to meta-analyses or that the data in the article itself is sufficient.
+
+## Purpose 
+Previous research has revealed that there is room for improvement at different stages of the meta-analytic process pipeline. In this study our purpose is twofold. First, we broadened previous process reproducibility assessments by considering the possible availability of the data upon request to the original authors and by assessing the reusability of the meta-analytic data in the different formats in which they are usually available. Second, we verified the outcome reproducibility of the meta-analyses that were process-reproducible using the available data. We attempted to explore meta-analysis outcome reproducibility at a different stage or level than previous work that is more focused on primary effect sizes reproducibility, using the primary effects sizes already coded by the original authors. 
+
+```{r importing_data_and_descriptives, include=FALSE}
+
+library(here)
+source(here::here("analysis", "01_importing_data_and_descriptives.R"))
+
+```
+
+# Method
+
+The pre-data analysis protocol (https://osf.io/42r3p/) was pre-registered on 19 October 2021. Any deviation from this protocol is explicitly acknowledged.
+
+## Identification and selection of articles and meta-analyses 
+In previous research we identified a pool of published meta-analytic reports on clinical psychological interventions through a systematic electronic search [@lopez-nicolas2021]. Of this pool, 100 were randomly selected using a random number generator between 1 and the total number of meta-analyses identified. The full search strategies and a summary of the screening process are available at: https://osf.io/z5vrn/, and the workflow of the randomly selection process is available at: https://osf.io/cp293/.
+From these 100 articles, each independent reported meta-analysis with at least 10 primary studies was selected. In case no meta-analysis reported in a paper had at least 10 studies, the meta-analysis with the highest number of primary studies was selected, even if this meta-analysis integrated less than 10 studies. `r Words(n_mas_less_10)` of the articles included in this report were in this situation. Therefore, our unit of analysis was each independent meta-analysis selected under these criteria. A total of `r n_mas_total` independent meta-analyses were selected.
+
+## Retrieval of primary data
+The availability of necessary primary data was checked. First, we looked for machine-readable data files through links leading to third-party repositories or in supplementary material hosted by the journal. Secondly, we looked for available data through tables or forest plots in document format in the meta-analytic report itself or supplementary material. In these cases, the primary data had to be manually re-coded to reuse it. On the other hand, if the primary data of a meta-analysis were not directly available, neither in a data file nor in a document file, we attempted to obtain the data through request to the corresponding author identified in the associated paper. We sent an initial request in June 2021 and a subsequent reminder in October 2021 if no reply was received. This reminder was sent to a more recent alternative email address if we were able to find one. If we were unable to obtain the data through the email request, the associated meta-analysis was labelled as not process reproducible. 
+In order to be able to reproduce meta-analyses, mainly primary effects and their associated standard errors are required. These are generally computed from primary statistics retrieved from the primary studies such as means, standard deviations or sample sizes. In this sense, we tried to retrieve the least processed data possible. First, we sought for the primary statistics, recovered in `r sprintf("%0.0f%%", df_type_of_data$perc[3] * 100)` of the cases; second, we sought for the primary effects and their standard errors (or, alternatively, the sampling variances), recovered in `r sprintf("%0.0f%%", df_type_of_data$perc[2] * 100)` of the cases; finally, we sought for the primary effects and their confidential limits, recovered in `r sprintf("%0.0f%%", df_type_of_data$perc[1] * 100)` of the cases, from which the standard errors were approximated as follows: 
+
+$$se_i = (\frac{UB_i - LB_i}{2z_{\alpha/2}})$$
+
+
+
+with $se_i$ being the standard error of the ith effect size, $UB_i$ and $LB_i$ the upper and lower confidence limits of confidence interval for the ith effect size, and $z_{\alpha/2}$ the $1 - z_{\alpha/2}$ quantile of the standard normal distribution (usually, $z_{\alpha/2} = 1.96$ assuming a 95% confidence interval).
+
+
+## Reconstructing the original analytical scheme
+To proceed with reproducibility attempts of the meta-analyses that were labelled as process reproducible, we first looked for the availability of the original analysis script. When it was available, analytical reproducibility was checked by rerunning the original script on the associated primary data. In most cases (`r sprintf("%0.0f%%", 100-((n_mas_w_script/df_process_rep$n[2]) * 100))`), the analysis script code was not available. Thus, in these cases we tried to reconstruct the original analytical scheme using the technical details reported in the paper. Specifically, we collected information on: (a) meta-analytic model originally assumed; (b) weighting scheme; (c) between-studies variance estimator; (d) confidence interval method; and (e) software used.  If any of these details about the analytical methods were not reported, but the software used was mentioned, we inferred the first four pieces of information from the default settings of the software used. If the software used was not reported, we inferred this information from the default settings of the most used software in the sample, which was *Comprehensive Meta-Analysis*. Additional information about the meta-analysis was collected that is not reported in this manuscript. The full list of variables collected is available in the Protocol (https://osf.io/tq4uf/) and a Codebook describing these variables is available at: https://osf.io/ym78s/. 
+
+## Data collection procedure 
+Primary-level data and aggregate-level data described above, were coded by five members of the group. At a first pilot stage, a random sample of five articles of the total pool was independently coded by the five members and, subsequently, in a series of meetings, disagreements between the coders were resolved by consensus. Next, the initial pool of 100 included articles was split among four of them, 25 each. A random sample of 25 articles of the total pool was assigned to the fifth member to carry out independent double-coding of these cases, with the goal to track the reliability of the data collection process. Disagreements were resolved by consensus and checking the original materials.
+
+## Reproducibility outcomes
+Each meta-analysis was labelled using the following reproducibility success scheme: (a) reproducible; (b) not process-reproducible; (c) numerical error (d) decision error. Not process-reproducible refers to situations when we were unable to access the primary data neither through direct extraction nor upon request. Similar to previous studies (Artner et al., 2020; Hardwicke et al., 2018, 2021) an index of numerical error was computed (see Protocol https://osf.io/tq4uf/). This index expressed the differences between reproduced and original values as percentages. To avoid labelling minor numerical discrepancies related to numerical rounding as reproducibility problems, a 5% discrepancy threshold was set. Thus, a meta-analysis was labelled as numerical error if showed a discrepancy larger than 5%. 
+Finally, decision error refers to situations where the $p_{reported}$ falls on the opposite side of the .05 boundary in relation to the $p_{reproduced}$. 
+We mainly focused on analytical reproducibility of summary effects, their confidence bounds and the result of the null hypothesis significance test. Secondarily, we also assessed analytical reproducibility of other synthesis methods such as heterogeneity statistics.
+
+## Reproducibility checks workflow 
+Analytical reproducibility checks were carried out at different stages. Firstly, through reported analytic details or script code. When the analysis script code was available, computational reproducibility was checked by rerunning the script with the available primary data. In most cases, the analysis script code was not available. Thus, in these cases we coded the analytic details as explained above to fit equivalent meta-analytic models as a function of these details using the available primary data. This analysis scheme was programmed in the R environment [@r2022] using the *metafor* package [@viechtbauer2010]. The scripts are available at: …. 
+Second, given that the manual recoding process is an error-prone task, some mistakes can appear. Thus, those meta-analyses labelled as numerical error and/or decision error in the previous stage were re-assessed by a different member of the team. In cases where an error was found in the originally coded results, analytic methods and/or primary data, the meta-analyses were reproduced again and re-labelled according to the updated results. 
+Third, a qualitative assessment of the meta-analyses still labelled as numerical error and/or decision error was carried out. The same reviewers who checked for errors produced individual reports on the possible source of the discrepancy and its reproducibility was judged qualitatively by four of the other authors. This stage was a deviation from the pre-registered protocol, and made it possible to identify situations with obvious explanations, such as rounding, inverted signs, etc.
+Finally, for meta-analyses that remained labelled as non-reproducible, an email was sent to the corresponding author of the associated paper explaining our aims, our approach, and our results regarding his/her meta-analysis and requesting additional information that could explain the mismatch between the original reported results and the reproduced results. We tried to solve the reproducibility issues within a month after the request and we updated the label accordingly. 
+
+# Results 
+
+From the 100 included papers, `r n_mas_total` independent meta-analyses were selected following the criteria explained above. These meta-analyses included `r round(k_mean, 2)` primary studies on average (`r sprintf("sd = %0.2f; median = %0.0f; interquartile range = %0.0f-%0.0f; range = %0.0f-%0.0f)", k_sd, k_median, k_q1, k_q3, range[1], range[2])`). Figure 1 displays the distribution of number of primary studies among the meta-analyses included in our sample. Original results and characteristics of these meta-analyses are available at: …
+
+``` {r, fig.width = 6, fig.height=6, fig.cap="Distribution of the number of primary studies included in each of the meta-analyses. Vertical blue dotted lines represent the first quartile, median, and third quartile, respectively."}
+
+hist_primary_studies
+
+```
+
+## Process reproducibility 
+Figure 2 summarizes the primary data retrieval results. Based on the availability of primary data, either retrieved directly from the paper or upon request, `r df_process_rep$n[2]` meta-analyses (`r sprintf("%0.0f%%", df_process_rep$perc[2]*100)`, see Fig. 2a) were labelled as process reproducible. Of these `r df_process_rep$n[2]` meta-analyses, in about half of the cases the primary data was retrieved from a forest plot in the paper itself and in about a third of the cases the primary data was retrieved from supplementary files. Only in `r sprintf("%0.0f%%", df_source_primary_data$perc[1]*100)` of the cases the primary data was retrieved upon request (see Fig. 2b for further details). Although attempts were made to retrieve data for `r df_process_rep$n[1]+df_source_primary_data$n[1]` meta-analyses from `r sum(df_request$n)` different papers, data was only retrieved upon request for `r df_source_primary_data$n[1]` of them, from `r df_request$n[2]` different papers (`r sprintf("%0.0f%%", df_request$perc[2]*100)`, see Fig. 2c). In the remaining cases, a reply providing some reasons not to share was received in about a third of the cases (`r sprintf("%0.0f%%", df_request$perc[2]*100)`, see Fig 2c), whereas no reply was received in the rest. Table 1 summarises the different reasons given in cases where data was not provided upon request.
+
+```{r}
+
+kbl(
+  df_reasons,
+  format = "latex",
+  booktabs = TRUE,
+  col.names = c("Reason", "N", "%"),
+  align = c("l", "c", "c"),
+  caption = "Reasons given when data was not received upon request."
+  ) %>% 
+    column_spec(1, width = "7cm")
+  
+```
+
+## Challenges faced retrieving primary data
+In most cases, when the necessary data was available, such data was in document formats, as previously reported. Data available in tables or forest plots shared in *pdf* or *docx* format –either in the document itself or in the supplementary materials– was found to be highly prevalent. This led to a manual recoding of the primary data to be able to reuse them. Furthermore, when data was reported through general tables (i.e. tables listing all the primary studies included with their characteristics), it was not always obvious in which meta-analysis each data entry was included, leading to the time-consuming task of matching each data entry with each independent meta-analytic result reported in the paper. There were only `r df_source_primary_data$n[2]` meta-analyses (from`r sum(df_data_downloaded$Item)` different papers) of the `r df_process_rep$n[2]` labelled as process reproducible (`r sprintf("%0.0f%%", df_source_primary_data$perc[2]*100)`), where the task of retrieving the data required simply downloading the data in an machine-readable data file format.
+On the other hand, as shown in Figure 2c, when the necessary data was not available, retrieving it upon request to the original authors led to a remarkably low success rate.
+
+``` {r, fig.env = "figure*", fig.width = 10, fig.height=11, fig.cap="Percentage of (a) process-reproducible meta-analyses; (b) different types of sources of original data; and (c) data request results.", out.width = "100%"}
+
+ figure2
+
+```
+
+## Outcome reproducibility 
+The outcome reproducibility was checked in `r df_process_rep$n[2]` meta-analyses from `r nrow(df_nmas_wdata)` different papers. In `r filter(df_script, script == 1)$n` of these meta-analyses (`r sprintf("%0.0f%%", filter(df_script, script == 1)$n/sum(df_script$n)*100)`), all from the same paper, the original script code was available. Therefore, in these five cases, analytical reproducibility was checked running the original script analysis on the original primary data. In the remaining cases, the original analytical framework was reconstructed as explained above. 
+```{r first_stage, include=FALSE}
+
+rm(list=ls())
+source(here::here("analysis", "02_first_stage.R"))
+
+```
+Following the first stage of re-analysis, `r nrow(df_to_rev)` meta-analyses were re-assessed because they were labelled as numerical error and/or decision error following the re-analysis scheme explained above. 
+```{r second_stage, include=FALSE}
+
+rm(list=ls())
+source(here::here("analysis", "03_second_stage.R"))
+
+```
+Of these, `r nrow(df_to_reanalyse)` were re-analysed again as some coding errors were found in the second stage. After this, `r nrow(filter(df_to_reanalyse, numerical_error != "error"))` were re-labelled as reproduced and `r nrow(filter(df_to_reanalyse, numerical_error == "error"))` still had relevant discrepancies. Furthermore, `r nrow(filter(df_mas_revised, qualitative_check == "rep"))` were labelled as reproduced in the qualitative check because the discrepancy was probably explained by rounding issues, inverted signs for results (reported in absolute value) and primary data, minor reporting errors, or minor adjustments in the analytical scheme. In the remaining `r nrow(filter(df_mas_revised, qualitative_check == "request_information"))`, and in the `r nrow(filter(df_to_reanalyse, numerical_error == "error"))` re-analysed again without success, some issues or relevant discrepancies without apparent explanation were found. Figure 3 displays a scatterplot showing the consistency between the original and reproduced summary effect size and their confidence bounds of these `r nrow(df_to_scatter)` meta-analyses. 
+Additionally, as a secondary analysis, the reproducibility of the $I^2$ heterogeneity statistic was explored. Figure 4 displays a scatterplot showing the consistency between the original and reproduced $I^2$ statistics. 
+As shown in Figures 3 and 4, the discrepancies found in the heterogeneity statistic $I^2$ are larger than those found in the summary effects and their confidence intervals. The lack of precision of the available data (rounded data) or incomplete information on aspects such as the tau-squared estimator applied seem to have a substantial impact on the reproducibility of this result.
+
+``` {r, fig.width = 7, fig.height=14, fig.cap="Scatterplot displaying the reproduced values as a function of the original values classified by whether or not decision error was found. Only the results of the 52 meta-analyses with a discrepancy of more than 5% identified in the first stage are displayed, but with the corrections made in the second stage. All values are in *d* scale. In panel (a) the summary effects are displayed and in panel (b) the confidence intervals. For (b) the colours represent lower or upper bound of the confidence interval."}
+figure3
+
+```
+
+``` {r, fig.width = 7, fig.height=7, fig.cap="Scatterplot displaying the reproduced values as a function of the original values classified by whether or not decision error was found. Only the results of the 52 meta-analyses with a discrepancy of more than 5% identified in the first stage are displayed, but with the corrections made in the second stage. The values displayed are $I^2$ hetorogeneity statistics."}
+figure4
+
+```
+
+## Main issues identified 
+Different issues in these `r nrow(df_to_rev2)` meta-analyses were identified in the second stage. For instance, in one of the meta-analyses which showed discrepancies in the confidence limits, inconsistencies were found in the original meta-analytic report itself. The confidence limits originally reported for that meta-analysis were different in the abstract, main text and forest plot. Matching the reproduced results were those reported in the forest plot but not those reported in the text. Furthermore, inconsistencies in the original summary effect reported were found between the results reported in abstract and the results reported in the main text and the forest plot. This kind of original results reporting inconsistencies was also found in other cases. In another case where primary data were available in both a table and a forest plot, minor inconsistencies were also found between the primary data of the table and the forest plot. These appeared to be typos. 
+Furthermore, regarding the number of primary data included, some inconsistencies were also found. For instance, in one of the meta-analyses, the main text reported the inclusion of 10 comparisons in the meta-analysis, whereas in a table of results 11 comparisons were reported for this meta-analysis. Furthermore, the results reported for this meta-analysis in the text and in the results table were different. Moreover, one apparently included primary study –it was cited in the text as such– did not appear in the table of main characteristics of included studies. On the other hand, in 11 meta-analyses the primary data retrieved from the supplementary materials were not sufficient to reach the number of primary studies stated as included in this meta-analysis in the original report.
+
+```{r third_stage, include=FALSE}
+
+rm(list=ls())
+source(here::here("analysis", "04_third_stage.R"))
+
+```
+
+## Original authors clarifications
+These `r nrow(df_to_rev2)` meta-analyses were from `r sum(df_success_request$n)` different papers. Therefore, `r sum(df_success_request$n)` clarification requests with information about the study aims, methods and preliminary results were sent to the corresponding authors of the original articles. A reply was received in only `r df_success_request$n[2]`  of the `r sum(df_success_request$n)` cases.
+In one of them, the original authors sent back a link to an OSF repository where the original data and analysis script were stored. This link was not reported in the paper by mistake according to the authors themselves. The script was run on these data and the results were successfully reproduced. In this case, the data previously used were retrieved from a forest plot (means and standard deviations) and a table (sample sizes) reported in the paper. The previous discrepancy was explained by two cases included in the original meta-analysis from the same primary study that were reported with the same ID in the forest plot and were not correctly matched with their corresponding sample size extracted from the table. This situation exemplifies the potential issues arising from having to reconstruct the original data from tables and figures and not having open access to the original data file. 
+In the other case, the data used was retrieved from a huge table in supplementary material (*docx*) with all effect sizes and their confidence limits. The original authors sent back this same table by increasing the number of decimal places of the effect sizes and after correcting some wrong values that they themselves detected in that process. This fixed the discrepancies for some of the meta-analyses in this paper.
+
+# Discussion 
+The main aim of this study was to explore the analytical reproducibility of a sample of published meta-analyses on the effectiveness of clinical psychology interventions. Firstly, by analysing the availability and reusability of original data and, secondly, by assessing the reproducibility of the published results using these retrieved original data and trying to reconstruct the original analysis scheme. Several findings have emerged from this process, such as some difficulties in retrieving the original data and some problems with the reproducibility of the meta-analyses examined.
+
+Regarding original data availability –even taking availability in a broad sense (i.e. retrieving data from tables and figures when no data file was available) – for about a third of the included meta-analyses no available data was found.  In these cases, attempts were made to obtain the data on request to the corresponding author, with little success. Data was only received back in 12% of the requests made. This result is in line with what was found in a recent study where data availability statements from a set of primary studies were analysed [@gabelica2022], although 42% of these statements reported availability on request, only 6.8% of these shared their data when requested. Furthermore, [@page2022] found that of a set of meta-analyses that included a data availability statement, 42% also reported availability on request. Stating data availability on request seems very common, however obtaining the data on request seems highly challenging. Nowadays, there are straightforward, free and open ways to share data. Several repositories (e.g., OSF, GitHub, Zenodo, Figshare) are available for researchers to host openly the data associated with published results. On-request availability has proven to be neither useful nor necessary.
+
+For the remaining meta-analyses (about two thirds), there was some way of retrieving the data used by the original authors. However, only 5% of these shared a machine-readable data file (e.g., *csv*, *xlsx*), whereas the rest of the data was retrieved from files in document format (e.g., *docx*, *pdf*). This forces manual recoding of the data for reuse, an inefficient task –adding avoidable workload–, as well as an error-prone one –adding a new source of error. In awareness of these problems, partial double coding was carried out and data extraction from meta-analyses with discrepancies was rechecked. This added to workload and as expected, even taking these precautions did not avoid some coding errors being detected at a later stage. Furthermore, sometimes the data associated with a particular meta-analytic result was available in a forest plot, associating a particular dataset with a particular meta-analytic result. However, on other occasions, the data presented, either in the paper itself or in a supplementary file, were in general tables, that is, tables with all the primary studies, which could be part of different independent meta-analyses reported in the same paper. This kind of tables are a good overview of the characteristics of the primary studies included, but also a problematic way to make data available. On the one hand, the retrieval process can be difficult, as it involves matching subsets of these primary data with different concrete meta-analytic results, which is not always clearly indicated; on the other hand, these tables are often generated manually in document file formats (e.g. Word), adding another source of error, as we saw in one of the cases included in this paper, where the original authors themselves detected an erroneous data point in such a table shared in a supplementary file. Nevertheless, even in very recent meta-analyses, presenting data in this way is considered a form of data availability [@page2022]. As mentioned above, there are now many simple alternatives for sharing data files and guidelines on how to do it properly [@wilkinson2016].
+
+Moreover, the availability of the original analysis code script was very limited. Only in five meta-analyses (3%), all from the same paper, the original script code was openly available. In most cases, the original analyses were reconstructed from the description provided in the paper itself, not always rich in detail, so that many of these details had to be inferred from the default settings of the software used. The availability of analysis scripts often shows similar rates, both in meta-analyses [@page2022; @polanin2020] and in primary research [@hardwicke2020; @hardwicke2022]. This makes it more difficult to easily check the reproducibility of the results from such studies. Reconstructing the analytical scheme adds to the workload, with the potential to introduce errors, both in the original report and in the reconstruction, and deals with the eventual lack of relevant analytical information.
+
+Despite these difficulties, by recovering the original data and reconstructing the original analysis scheme, the analytical reproducibility of the results was assessed in 146 meta-analyses. These attempts at analytical reproduction went through several stages as explained above, trying to minimize the impact of possible coding errors, and requesting clarifications from the original authors. Nevertheless, even with these efforts, some discrepancies remained in the results. In some of these cases, different issues related to these discrepancies were identified. For instance, in some cases internal discrepancies were found in the paper itself, text-figure discrepancies, text-abstract, or text-table discrepancies. Furthermore, some problems were found with the lack of some primary data, that is, data available in supplementary material that included fewer cases than those finally reported in the results of the published paper as included. These situations could be explained by typos in the manuscript, or unstated meta-analysis updates that produce different versions of the manuscript, data or supplementary material leading to different results. While it is important to note that discrepancies in the summary effect results and their confidence intervals were mostly minor, with little or no impact on the conclusions, these situations are easily avoidable. For instance, sharing the data in its native format, rather than a manually generated table in a supplementary document, would avoid transcription errors or lack of listing of some of the primary studies included in the meta-analysis, as was found in some of the cases. It would also reduce the workload –and error– for the authors themselves and for a reviewer or other researcher interested in assessing the reproducibility of the results, reusing the data or updating the meta-analysis. On the other hand, some of the problems identified could be explained by typos. Currently, there are tools that facilitate the production of so-called reproducible manuscripts, such as the R packages *kintr* [@xie2022] and *rmarkdown* [@allaire2022]. A reproducible manuscript embeds analysis code, data and results reporting in a single document, extracting and reporting the results from the output of the computational process itself, avoiding error-prone manual transcriptions. 
+
+Our results are complementary to those observed in previous research on the reproducibility of the primary effects of meta-analyses [@gotzsche2007; @maassen2020] and related problems due to the multiplicity of primary effects [@tendal2009]. These studies found problems in reproducing the primary effects of published meta-analyses, or in reaching agreement between independent coders in computing them. Such problems, to a greater or lesser extent, had some impact on the meta-analytic results. Our results show that, even when using the primary effects as originally coded, certain problems of reproducibility of the results may arise. Some of these problems are added error on the source of error found in previous research on reproducibility of primary effects, which in turn are added error on the sources of error types of primary estimates (e.g., measurement error, sampling error, or reporting errors). No scientific research is totally error-free, but one of the main tasks of scientists is to minimize this error, and in some cases, such as those observed in this study, minimizing some potential sources of error can be straightforward.
+
+This study has some limitations. First, the time span covered is fairly wide. Thus, the findings may not capture the changes that have arisen in recent years. Therefore, additional research is needed to examine more specific changes over years. Second, most of the primary data was retrieved through manual re-coding, introducing some error, such data was rounded data, not precise values, and in many cases the standard error had to be approximated from the confidence limits., such points are both a limitation of our study and a feature of its results: meta-analytic data as they are often shared can lead to problems with the reproducibility of the results. This point leads to another limitation on what margin of discrepancy should be set as acceptable, given the non-precise nature of most of the data retrieved. In this study, a margin of 5% was set as acceptable. Although, being aware of the arbitrariness of this criteria, more emphasis was placed on trying to identify possible issues in the results that fell above this margin, than on establishing a ratio of non-reproduced meta-analyses. 
+
+In conclusion, being able to reproduce the meta-analyses included in this study showed several difficulties. Mainly two aspects can be highlighted: data availability and reusability of the data as they are shared, and apparent errors in the reporting of results in some cases. There are many reasons why this is especially hard to justify when it comes to meta-analyses. Firstly, one of the main difficulties had to do with the retrieval of the original data. The data collected for a meta-analysis can be especially useful for future research, these data represent collections of available evidence on a particular topic, direct and open access to such datasets allows for easy updates, re-analyses and, of course, quick reproducibility assessments. Secondly, meta-analytic data generally do not contain sensible or personal information, they represent summary data from specific samples. Sharing meta-analytical data openly does not involve ethical or legal conflicts. Third, meta-analytic results often represent the state of the art of the evidence on a particular topic. These results guide applied practice, public policy, or future research directions. This prominent status entails a major responsibility for the credibility, reliability, and validity of published meta-analytic results. 
+
+# References
+
+
+
