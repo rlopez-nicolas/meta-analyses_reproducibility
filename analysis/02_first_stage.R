@@ -1,6 +1,6 @@
 ####Importing data####
 
-load(file = "data/first_stage/data.Rdata")
+load(file = here::here("data", "first_stage", "data.Rdata"))
 
 ####Imputation of non-available analytic details through the software used.####
 
