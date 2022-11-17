@@ -289,6 +289,8 @@ df_mas<- df_mas %>%
   mutate(decision_error = ifelse(original_ci_test==rep_ci_test, "no_error", "error")) %>% 
   mutate(decision_error = factor(decision_error))
 
+save(df_mas, file = here::here("results", "first_stage", "first_stage_results.Rdata"))
+
 ####Selecting meta-analysis to be revised due to issues in reproductions####
 
 df_to_rev<- df_mas %>% 

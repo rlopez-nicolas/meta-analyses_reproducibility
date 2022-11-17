@@ -89,6 +89,19 @@ df_to_reanalyse<- df_to_reanalyse %>%
   mutate(numerical_error=ifelse(abs(diff_g)>=5 | abs(diff_ac)>=5, "error", "minor")) %>% 
   mutate(numerical_error=ifelse(diff_g==0 & diff_ac == 0, "no_error", numerical_error)) %>%
   mutate(decision_error = ifelse(original_ci_test==rep_ci_test, "no_error", "error")) %>% 
-  relocate(c(issues, qualitative_check), .after = last_col())
+  relocate(c(issues, qualitative_check), .after = last_col()) %>% 
+  mutate(qualitative_check2= c(rep("rep", 7), "no_rep", "rep"))
+
+df_results_stage_3<- df_to_rev2 %>% 
+  filter(clarification_request_results != "Reply") %>% 
+  mutate(qualitative_check2 = c(rep(NA, nrow(.)))) %>% 
+  rbind(df_to_reanalyse) %>% 
+  arrange(order)
+
+
+save(df_results_stage_3, file = here::here("results", "third_stage", "third_stage_results.Rdata"))
+
+
+
 
 

@@ -1,5 +1,5 @@
 if(!require(pacman)){
-  install.packages("pacman", repos = "https://cran.rstudio.com/")
+  install.packages("pacman")
 }
 library(pacman)
 
@@ -91,9 +91,7 @@ df_reasons<- df_mas %>%
                                        ifelse(final_results == "propietary_data", "Propietary dataset", 
                                               ifelse(final_results == "again asking to supervisor and no reply", 
                                                      "The author requested more information and a written agreement including possible authorship. 
-                                                     After sending her further details on the use of the data, the author indicated that she will discuss this 
-                                                     with her former supervisor (data owner). No further news was heard until a reminder was sent. A reply was received indicating 
-                                                     that she was still waiting for a response from her former supervisor. Subsequently, no further reply was received."))))) %>% 
+                                                      Additional details were sent and after some email exchanges there was no further response."))))) %>% 
   group_by(final_results) %>% 
   tally() %>% 
   cbind(MultinomCI(.$n, conf.level = 0.95, method = "sisonglaz"))%>%
@@ -175,16 +173,16 @@ df_software<- df_mas %>%
 
 ####Figures####
 
-#Figure 1
+#Figure 2
 
 hist_primary_studies<- ggplot(df_mas, aes(x = k)) + 
   geom_histogram(alpha = 0.75, aes(y=..count..), position = "identity",
-                 bins = 20, colour = "#F4B5BD", fill = "lavenderblush") +
+                 bins = 50, colour = "#b00b13", fill = "lavenderblush") +
   labs(x="Number of primary studies included",
        y= "Count")+
-  geom_vline(aes(xintercept=k_median), colour= "#85D4E3",
+  geom_vline(aes(xintercept=k_median), colour= "#3444d9",
              linetype="dashed", size=1)+
-  geom_vline(xintercept = c(k_q1, k_q3), colour = "#85D4E3",
+  geom_vline(xintercept = c(k_q1, k_q3), colour = "#3444d9",
              linetype="dashed", size=0.75, alpha = 0.5)+
   theme_minimal(base_size = 10)+
   theme_classic()+
@@ -195,10 +193,10 @@ hist_primary_studies<- ggplot(df_mas, aes(x = k)) +
     panel.grid.major.y = element_blank(),
     panel.grid.major.x = element_blank())
 
-ggsave(here::here("results", 'Figure 1.tiff'), width = 6 , height = 6 , units = "in", dpi = 600, compression = "lzw+p")
+ggsave(here::here("results", 'Figure 2.tiff'), width = 6 , height = 6 , units = "in", dpi = 600, compression = "lzw+p")
 
 
-#Figure 2
+#Figure 3
 
 #Definition of palette values:
 
@@ -211,13 +209,13 @@ plt_source_primary_data<- customized_barplot(df_source_primary_data, pal = c("#E
 plt_results_request<- customized_barplot(df_request, pal = Moonrise3[3:5], title = "Results of data requests", legend = "Result:", width = .35)
 
 
-figure2<- ggarrange(plt_process_rep,
+figure3<- ggarrange(plt_process_rep,
                     plt_source_primary_data,
                     plt_results_request,
                     labels = c("A", "B", "C"),
                     ncol = 1, nrow = 3, font.label = list(size = 14))
 
-ggsave(here::here("results", 'Figure 2.tiff'), width = 10, height = 11, units = "in", dpi = 600, compression = "lzw+p")
+ggsave(here::here("results", 'Figure 3.tiff'), width = 10, height = 11, units = "in", dpi = 600, compression = "lzw+p")
 
 
 ####Secondary analysis####

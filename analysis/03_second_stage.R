@@ -18,6 +18,11 @@ df_mas_revised5<-read_xlsx(here::here("data", "second_stage", "df_to_rev_coder5.
 df_mas_revised<- rbind(df_mas_revised2, df_mas_revised3, df_mas_revised4, df_mas_revised5) %>% 
   arrange(order)
 
+df_npapers<- df_mas_revised %>% 
+  select(ID, order) %>% 
+  group_by(ID, order) %>% 
+  tally()
+
 
 df_to_reanalyse<- df_mas_revised %>% filter(qualitative_check=="re-analyse")
 
@@ -190,9 +195,6 @@ df_to_rev2<- df_mas_revised %>%
 
 write.xlsx(df_to_rev2, here::here("results", "second_stage", "df_to_rev2.xlsx"))
 
-
-####Figure 3#####
-
 df_to_scatter<- df_mas_revised %>% 
   filter(qualitative_check != "re-analyse") %>% 
   rbind(df_to_reanalyse) %>% 
@@ -207,8 +209,15 @@ df_to_scatter<- df_mas_revised %>%
   mutate(decision_error = ifelse(qualitative_check == "re-analyse", decision_error,
                                  ifelse(original_ci_test==rep_ci_test, "no_error", "error"))) %>% 
   mutate(diffi2 = ifelse(qualitative_check == "re-analyse", diffi2,
-                         I2-rep_i2))
+                         I2-rep_i2)) %>% 
+  arrange(order)
 
+
+df_stage2_results<-df_to_scatter
+save(df_stage2_results, file = here::here("results", "second_stage", "second_stage_results.Rdata"))
+
+
+####Figure 4#####
 
 df_to_scatter_original_ci<- df_to_scatter %>% 
   select(LL_CI, UL_CI, decision_error, diff_ac) %>% 
@@ -225,38 +234,39 @@ df_to_scatter_ci<- inner_join(df_to_scatter_original_ci, df_to_scatter_rep_ci, b
 
 
 scatter_g<- scatter_match(df_to_scatter, x=df_to_scatter$summary_effect, y=df_to_scatter$rep_g, 
-                          shape = df_to_scatter$decision_error, shape_name = "Decision error", shape_labels = c("Error", "No error"),
-                          size = abs(df_to_scatter$diff_g),
-                          title = "Summary effect")
+                          shape = df_to_scatter$decision_error, shape_name = "Decision error:", shape_labels = c("Error", "No error"),
+                          size = 15,
+                          title = "Summary effect") + 
+  theme(plot.margin = unit(c(0, 0, 3, 0), "lines"))
 
 
 
 
 scatter_ci<- scatter_match2(df_to_scatter_ci, x=df_to_scatter_ci$value.x, y=df_to_scatter_ci$value.y, 
-                           shape = df_to_scatter_ci$decision_error.x, shape_name = "Decision error", shape_labels = c("Error", "No error"), 
+                           shape = df_to_scatter_ci$decision_error.x, shape_name = "Decision error:", shape_labels = c("Error", "No error"), 
                            color = df_to_scatter_ci$original_bound, color_name = "Bound", color_labels = c("Lower", "Upper"),
-                           size = abs(df_to_scatter_ci$diff_ac.x),
-                           title = "Confidence Interval")
-figure3<- ggarrange(scatter_g,
+                           size = 15,
+                           title = "Confidence Interval") +
+  theme(plot.margin = unit(c(0, 0, 0, 0), "lines"))
+
+figure4<- ggarrange(scatter_g,
                     scatter_ci,
                     labels = c("A", "B"),
                     ncol = 1, nrow = 2, font.label = list(size = 15),
                     common.legend = FALSE, legend = "bottom")
 
-ggsave(here::here("results","second_stage", 'Figure 2.tiff'), width = 7, height = 14, units = "in", dpi = 600, compression = "lzw+p")
+ggsave(here::here("results","second_stage", 'Figure 4.tiff'), width = 7, height = 14, units = "in", dpi = 600, compression = "lzw+p")
 
 
 ####Secondary analysis, Figure 4####
 
 
-
-
 scatter_i2<-scatter_match(df_to_scatter, x=df_to_scatter$I2, y=df_to_scatter$rep_i2, 
-                          shape = df_to_scatter$decision_error, shape_name = "Decision error", shape_labels = c("Error", "No error"),
-                          size = abs(df_to_scatter$diffi2),
+                          shape = df_to_scatter$decision_error, shape_name = "Decision error:", shape_labels = c("Error", "No error"),
+                          size = abs(df_to_scatter$diff_g),
                           title = "Heterogeneity statistic (I2)")
 
-figure4<- ggarrange(scatter_i2,
+figure5<- ggarrange(scatter_i2,
                     legend = "bottom")
 
-ggsave(here::here("results","second_stage", 'Figure 3.tiff'), width = 7, height = 6, units = "in", dpi = 600, compression = "lzw+p")
+ggsave(here::here("results","second_stage", 'Figure 5.tiff'), width = 7, height = 6, units = "in", dpi = 600, compression = "lzw+p")

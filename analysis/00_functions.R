@@ -15,15 +15,24 @@ pacman::p_load(tidyverse, metafor)
 # width: desired bar width
 #
 
-customized_barplot<- function(d, pal, title, legend, width=0.35){
+customized_barplot<- function(d, pal, title, legend, width=0.35, rate=TRUE){
   
   plt <- ggplot(data=d, aes(x=NA, y=perc, fill=Item)) +
     geom_bar(colour = 'black', stat="identity", width = width) +
     scale_x_discrete(breaks = NULL) +
     scale_fill_manual(values=pal,
-                      guide = guide_legend(reverse=T)) +
-    scale_y_continuous(labels=scales::percent) +
-    theme_minimal(base_size = 10) +
+                      guide = guide_legend(reverse=T))
+  if (rate == TRUE){  
+  
+    plt<- plt + scale_y_continuous(labels=scales::percent) 
+    
+  }
+    
+    else {
+      
+    plt <- plt + scale_y_continuous(limits = c(0, sum(d$n)))  
+    }
+    plt <- plt + theme_minimal(base_size = 10) +
     theme(legend.position='bottom', 
           legend.direction='horizontal',
           legend.text = element_text(size = 13),
@@ -32,12 +41,23 @@ customized_barplot<- function(d, pal, title, legend, width=0.35){
           axis.text.y=element_blank(),
           axis.ticks.y=element_blank(),
           axis.title.x=element_blank(),
-          plot.title = element_text(size = 15, face = "bold")) +
-    geom_text(aes(label=sprintf ("%i%%", round(perc*100, 0))), 
+          plot.title = element_text(size = 15, face = "bold")) 
+  
+  if (rate == TRUE) {  
+    plt<-plt +geom_text(aes(label=sprintf ("%i%%", round(perc*100, 0))), 
               size = 4, 
               position = position_stack(vjust = 0.5),
-              fontface = "bold") +
-    labs(fill=legend) +
+              fontface = "bold") 
+    }
+  
+  else {
+    plt<-plt +geom_text(aes(label=paste0(perc)), 
+                       size = 4, 
+                       position = position_stack(vjust = 0.5),
+                       fontface = "bold") 
+  }
+  
+   plt<- plt +labs(fill=legend) +
     ggtitle(sprintf("      %s", title)) +
     coord_flip(clip = 'off') +
     geom_text(
@@ -84,7 +104,9 @@ scatter_match<- function(d, x, y, shape, shape_name, shape_labels, size, title)
         legend.key.size = unit(.5,"cm"),
         legend.title = element_text(size=14, face="bold"),
         plot.title = element_text(size = 13, face = "bold", hjust = .5),
-        panel.background = element_rect(colour = "black", size = 1)) +
+        panel.background = element_rect(colour = "black", size = 1),
+        axis.title = element_text(size=14,face="bold"),
+        axis.text = element_text(size = 12)) +
   labs(title= title,
        y= "Reproduced value", 
        x= "Original value"
@@ -98,14 +120,16 @@ scatter_match2<- function(d, x, y, shape, color, color_name, color_labels, size,
   geom_point(stroke = 1) + 
   geom_abline(intercept = 0, slope = 1, colour = "#000000", size = 0.65) + 
   scale_shape_manual(name = shape_name, labels = shape_labels, values = c(18, 3), guide = "none") +
-  scale_color_manual(name = color_name, labels = color_labels, values = c("#85D4E3", "#F4B5BD"))+
+  scale_color_manual(name = color_name, labels = color_labels, values = c("#3444d9", "#b00b13"))+
   scale_size_continuous(range = c(1, 6), guide = "none")+
   theme_classic(base_size = 10) + 
   theme(legend.text = element_text(size = 13),
         legend.key.size = unit(.5,"cm"),
         legend.title = element_text(size=14, face="bold"),
         plot.title = element_text(size = 13, face = "bold", hjust = .5),
-        panel.background = element_rect(colour = "black", size = 1)) +
+        panel.background = element_rect(colour = "black", size = 1),
+        axis.title=element_text(size=14,face="bold"),
+        axis.text = element_text(size = 12)) +
   labs(title= title,
        y= "Reproduced value", 
        x= "Original value"
