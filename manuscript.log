@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.4)  17 NOV 2022 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.4)  17 NOV 2022 16:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -711,43 +711,40 @@ LaTeX Warning: Float too large for page by 56.46974pt on input line 224.
 
 Underfull \vbox (badness 1215) has occurred while \output is active []
 
-
-Underfull \vbox (badness 1077) has occurred while \output is active []
-
 [2] [3 <./results/Figure 1.png>] [4]
-<manuscript_files/figure-latex/unnamed-chunk-1-1.pdf, id=147, 433.62pt x 433.62pt>
+<manuscript_files/figure-latex/unnamed-chunk-1-1.pdf, id=150, 433.62pt x 433.62pt>
 File: manuscript_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
 <use manuscript_files/figure-latex/unnamed-chunk-1-1.pdf>
-Package pdftex.def Info: manuscript_files/figure-latex/unnamed-chunk-1-1.pdf  used on input line 293.
+Package pdftex.def Info: manuscript_files/figure-latex/unnamed-chunk-1-1.pdf  used on input line 295.
 (pdftex.def)             Requested size: 241.74706pt x 241.74706pt.
 [5 <./manuscript_files/figure-latex/unnamed-chunk-1-1.pdf>]
-Overfull \hbox (18.976pt too wide) in paragraph at lines 306--317
+Overfull \hbox (18.976pt too wide) in paragraph at lines 308--319
  [][] 
  []
 
-<manuscript_files/figure-latex/unnamed-chunk-3-1.pdf, id=167, 722.7pt x 794.97pt>
+<manuscript_files/figure-latex/unnamed-chunk-3-1.pdf, id=170, 722.7pt x 794.97pt>
 File: manuscript_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use manuscript_files/figure-latex/unnamed-chunk-3-1.pdf>
-Package pdftex.def Info: manuscript_files/figure-latex/unnamed-chunk-3-1.pdf  used on input line 326.
+Package pdftex.def Info: manuscript_files/figure-latex/unnamed-chunk-3-1.pdf  used on input line 328.
 (pdftex.def)             Requested size: 501.55273pt x 551.70802pt.
-<manuscript_files/figure-latex/unnamed-chunk-4-1.pdf, id=168, 505.89pt x 1011.78pt>
+<manuscript_files/figure-latex/unnamed-chunk-4-1.pdf, id=171, 505.89pt x 1011.78pt>
 File: manuscript_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use manuscript_files/figure-latex/unnamed-chunk-4-1.pdf>
-Package pdftex.def Info: manuscript_files/figure-latex/unnamed-chunk-4-1.pdf  used on input line 343.
+Package pdftex.def Info: manuscript_files/figure-latex/unnamed-chunk-4-1.pdf  used on input line 345.
 (pdftex.def)             Requested size: 241.74373pt x 483.48749pt.
-<manuscript_files/figure-latex/unnamed-chunk-5-1.pdf, id=169, 505.89pt x 505.89pt>
+<manuscript_files/figure-latex/unnamed-chunk-5-1.pdf, id=172, 505.89pt x 505.89pt>
 File: manuscript_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use manuscript_files/figure-latex/unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: manuscript_files/figure-latex/unnamed-chunk-5-1.pdf  used on input line 349.
+Package pdftex.def Info: manuscript_files/figure-latex/unnamed-chunk-5-1.pdf  used on input line 351.
 (pdftex.def)             Requested size: 241.74373pt x 241.74373pt.
 [6] [7 <./manuscript_files/figure-latex/unnamed-chunk-3-1.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [8 <./manuscript_files/figure-latex/unnamed-chunk-4-1.pdf> <./manuscript_files/figure-latex/unnamed-chunk-5-1.pdf>]
-<results/Figure 6.png, id=209, 559.8516pt x 531.9072pt>
+<results/Figure 6.png, id=212, 559.8516pt x 531.9072pt>
 File: results/Figure 6.png Graphic file (type png)
 <use results/Figure 6.png>
-Package pdftex.def Info: results/Figure 6.png  used on input line 370.
+Package pdftex.def Info: results/Figure 6.png  used on input line 372.
 (pdftex.def)             Requested size: 501.55527pt x 476.52066pt.
 
 Underfull \vbox (badness 1215) has occurred while \output is active []
@@ -766,7 +763,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [13] (./manuscript.aux)
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: CA4AF3BAFE4FAB2A032EBF53690BA53A;4058.
+(rerunfilecheck)             Checksum: 91EA04AA0D06D09BE47F0F0D4CBE99E8;4080.
  ) 
 Here is how much of TeX's memory you used:
  15691 strings out of 476931
@@ -777,10 +774,10 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  72i,10n,77p,1870b,524s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/Users/neeeb/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Users/neeeb/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/neeeb/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/neeeb/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/neeeb/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/neeeb/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/Users/neeeb/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/Users/neeeb/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/Users/neeeb/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on manuscript.pdf (13 pages, 1457298 bytes).
+Output written on manuscript.pdf (13 pages, 1457499 bytes).
 PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
- 340 compressed objects within 4 object streams
+ 390 PDF objects out of 1000 (max. 8388607)
+ 343 compressed objects within 4 object streams
  106 named destinations out of 1000 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 

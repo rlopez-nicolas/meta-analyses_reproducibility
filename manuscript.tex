@@ -210,7 +210,7 @@ There are different approaches to the empirical assessment of scientific credibi
 
 The reproducibility of all published scientific results could be considered as the minimal threshold of scientific credibility (Hardwicke et al., 2021). Different approaches can be adopted for the empirical assessment of reproducibility. For example Nosek et al. (2022) make the distinction between process reproducibility and outcome reproducibility. Following this framework, a process reproducibility assessment could be carried out by reviewing the availability of the materials, data, and precise details of the analytical strategy in the report that are required to proceed with the reproduction attempt. An outcome reproducibility assessment can be carried out when the required elements are retrievable by actually reproducing the analyses. It is worth noting that the difficulty of performing an outcome reproducibility assessment depends on which analytical information is available. The availability of the original analysis code (i.e., the original computational instructions in a programming language) facilitates reproducibility analysis by enabling simply re-running the code on the data. Regrettably, the analysis code is currently seldom available (Hardwicke et al., 2022, 2020; López-Nicolás et al., 2022). When only a verbal summary of the performed analyses is available in the research report (which is the most common scenario in practice), the original analysis needs to be reconstructed. The challenges and implications of failed reproductions in both cases may be of a different nature.
 
-Several reproducibility analyses of meta-analyses have been performed in recent years. For example, some process reproducibility assessments have shown an important lack of data availability in machine-readable formats, and an almost complete absence of analysis script code availability (López-Nicolás et al., 2022; Polanin et al., 2020). Furthermore, some outcome reproducibility assessments have shown a considerable number of failures when trying to reproduce the primary effect sizes of some published meta-analyses by recollecting primary data from primary studies (Gøtzsche et al., 2007; Maassen et al., 2020; Tendal et al., 2009) possibly due to lack of details on how primary effect sizes were selected and computed. In these outcome reproducibility studies, the main task entails reconstructing the original data by retrieving them from the source, namely the included primary studies. Thus, their assessment focus is on this stage of the analysis pipeline of a meta-analysis, which usually involves decisions on how to select the primary outcomes and how to deal with possible dependency, and the computation of (standardized) effect sizes. Figure 1 displays a summary of the basic meta-analysis pipeline through a flowchart, outlining the different stages and listing previous work that has explored different facets of reproducibility of these as well as the required elements to be able to reproduce each stage.
+Several reproducibility analyses of meta-analyses have been performed in recent years. For example, some process reproducibility assessments have shown an important lack of data availability in machine-readable formats, and an almost complete absence of analysis script code availability (López-Nicolás et al., 2022; Polanin et al., 2020). Furthermore, some outcome reproducibility assessments have shown a considerable number of failures when trying to reproduce the primary effect sizes of some published meta-analyses by recollecting primary data from primary studies (Gøtzsche et al., 2007; Maassen et al., 2020; Tendal et al., 2009) possibly due to lack of details on how primary effect sizes were selected and computed. In these outcome reproducibility studies, the main task entails reconstructing the original data by retrieving them from the source, namely the included primary studies. Thus, their assessment focus is on this stage of the analysis pipeline of a meta-analysis, which usually involves decisions on how to select the primary outcomes and how to deal with possible dependency, and the computation of (standardized) effect sizes. Figure 1 displays a summary of the basic meta-analysis pipeline through a flowchart, outlining the different stages and listing previous work that has explored different facets of reproducibility of these, as well as the required elements to be able to reproduce each stage.
 
 \begin{figure*}
 \begin{center}
@@ -240,6 +240,8 @@ The pre-data analysis protocol (\url{https://osf.io/42r3p/}) was pre-registered 
 
 \hypertarget{data-materials-and-online-resources}{%
 \subsection{Data, materials, and online resources}\label{data-materials-and-online-resources}}
+
+Data and analysis script code are openly available at: \url{https://osf.io/6cmzh/}
 
 \hypertarget{identification-and-selection-of-articles-and-meta-analyses}{%
 \subsection{Identification and selection of articles and meta-analyses}\label{identification-and-selection-of-articles-and-meta-analyses}}
@@ -277,7 +279,7 @@ We focus on analytical reproducibility of summary effects, their confidence boun
 \hypertarget{reproducibility-checks-workflow}{%
 \subsection{Reproducibility checks workflow}\label{reproducibility-checks-workflow}}
 
-Analytical reproducibility checks were carried out at different stages. First, through reported analytic details or script code. When the analysis script code was available, computational reproducibility was checked by rerunning the script with the available primary data. In most cases, the analysis script code was not available. Thus, in these cases we coded the analytic details as explained above to fit equivalent meta-analytic models as a function of these details using the available primary data. This analysis scheme was programmed in the R environment (R Core Team, 2022) using the \emph{metafor} package (Viechtbauer, 2010). The scripts are available at: \ldots.
+Analytical reproducibility checks were carried out at different stages. First, through reported analytic details or script code. When the analysis script code was available, computational reproducibility was checked by rerunning the script with the available primary data. In most cases, the analysis script code was not available. Thus, in these cases we coded the analytic details as explained above to fit equivalent meta-analytic models as a function of these details using the available primary data. This analysis scheme was programmed in the R environment (R Core Team, 2022) using the \emph{metafor} package (Viechtbauer, 2010).
 
 Second, given that the manual recoding process is an error-prone task, some mistakes can appear. Thus, those meta-analyses labelled as numerical error and/or decision error in the previous stage were re-assessed by a different member of the team. In cases where an error was found in the originally coded results, analytic methods and/or primary data, the meta-analyses were once reproduced again and re-labelled according to the updated results. Additionally, a qualitative assessment of the meta-analyses still labelled as numerical error and/or decision error was also carried out. The same reviewers who checked for errors produced individual reports on the possible source of the discrepancy and its reproducibility was judged qualitatively by four of the other authors. This stage was a deviation from the pre-registered protocol, and made it possible to identify situations with obvious explanations, such as rounding issues, inverted signs, etc.
 
@@ -286,7 +288,7 @@ Finally, for meta-analyses that remained labelled as non-reproducible, an email 
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
-From the 100 included papers, 217 independent meta-analyses were selected following the criteria explained above. These meta-analyses included 18.35 primary studies on average (sd = 17.25; median = 13; interquartile range = 10-19; range = 3-134)). Figure 2 displays the distribution of number of primary studies among the meta-analyses included in our sample. Original results and characteristics of these meta-analyses are available at: \ldots{}
+From the 100 included papers, 217 independent meta-analyses were selected following the criteria explained above. These meta-analyses included 18.35 primary studies on average (sd = 17.25; median = 13; interquartile range = 10-19; range = 3-134)). Figure 2 displays the distribution of number of primary studies among the meta-analyses included in our sample. Original results and characteristics of these meta-analyses are available at: \url{https://osf.io/8jzbk}
 
 \begin{figure}
 \centering
@@ -408,7 +410,7 @@ The author(s) declare that there were no conflicts of interest with respect to t
 \hypertarget{acknowledgments}{%
 \subsection{Acknowledgments}\label{acknowledgments}}
 
-We thank the research group of the Meta-Research Centre of Tilburg University for providing feedback on an earlier version of this manuscript. We would also like to thank all the original authors of the included meta-analyses who enabled access to the data used in this project as well as the authors who provided clarifications in response to requests for clarification in step 3.
+We thank the research group of the Meta-Research Centre of Tilburg University for providing feedback on an earlier version of this manuscript. We would also like to thank all the original authors of the included meta-analyses who enabled access to the data used in this project as well as the authors who provided clarifications in response to requests for clarification in the third stage.
 
 \hypertarget{funding}{%
 \subsection{Funding}\label{funding}}
@@ -416,10 +418,10 @@ We thank the research group of the Meta-Research Centre of Tilburg University fo
 This research has been funded with a grant from the Spanish Ministry of Science and Innovation (Project PID2019-104080GB-I00, FEDER funds) and by the Spanish Ministry of Universities (predoctoral grant: FPU18/04805).
 
 \hypertarget{supplemental-material}{%
-\section{Supplemental Material}\label{supplemental-material}}
+\subsection{Supplemental Material}\label{supplemental-material}}
 
 \hypertarget{prior-versions}{%
-\section{Prior versions}\label{prior-versions}}
+\subsection{Prior versions}\label{prior-versions}}
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
