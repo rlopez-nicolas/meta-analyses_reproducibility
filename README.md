@@ -7,9 +7,15 @@ This repository contains materials, data, and code related to this [project](htt
 
 • *manuscript.rmd* - RMD file that compiles the manuscript and runs all the necessary scripts. 
 
+• *manuscript.pdf* - pdf manuscript produced by *manuscript.rmd* 
+
 • *apa.csl* - Citation style files that produces the reference section
 
 • *meta-analyses_reproducibility.bib* - Bibliographic file with all references. 
+
+• *supplementary_file.rmd* - RMD file that compiles the supplemtnary file and runs all the necessary scripts. 
+
+• *supplementary_file.pdf* - pdf supplementary file produced by *supplementary_file.rmd* 
 
 ## Folders
 
