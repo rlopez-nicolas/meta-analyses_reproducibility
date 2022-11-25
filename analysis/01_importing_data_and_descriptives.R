@@ -193,7 +193,7 @@ hist_primary_studies<- ggplot(df_mas, aes(x = k)) +
     panel.grid.major.y = element_blank(),
     panel.grid.major.x = element_blank())
 
-ggsave(here::here("results", 'Figure 2.tiff'), width = 6 , height = 6 , units = "in", dpi = 600, compression = "lzw+p")
+#ggsave(here::here("results", 'Figure 2.tiff'), width = 6 , height = 6 , units = "in", dpi = 600, compression = "lzw+p")
 
 
 #Figure 3
@@ -215,7 +215,7 @@ figure3<- ggarrange(plt_process_rep,
                     labels = c("A", "B", "C"),
                     ncol = 1, nrow = 3, font.label = list(size = 14))
 
-ggsave(here::here("results", 'Figure 3.tiff'), width = 10, height = 11, units = "in", dpi = 600, compression = "lzw+p")
+#ggsave(here::here("results", 'Figure 3.tiff'), width = 10, height = 11, units = "in", dpi = 600, compression = "lzw+p")
 
 
 ####Secondary analysis####
@@ -316,5 +316,5 @@ mas_df<- flatten(mas_dat)
 
 #Saving primary data
 
-save(df_mas, mas_df,
-     file = here::here("data", "first_stage", "data.Rdata"))
+#save(df_mas, mas_df,
+#     file = here::here("data", "first_stage", "data.Rdata"))

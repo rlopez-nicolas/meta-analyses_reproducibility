@@ -214,7 +214,8 @@ df_to_scatter<- df_mas_revised %>%
 
 
 df_stage2_results<-df_to_scatter
-save(df_stage2_results, file = here::here("results", "second_stage", "second_stage_results.Rdata"))
+
+#save(df_stage2_results, file = here::here("results", "second_stage", "second_stage_results.Rdata"))
 
 
 ####Figure 4#####
@@ -255,7 +256,7 @@ figure4<- ggarrange(scatter_g,
                     ncol = 1, nrow = 2, font.label = list(size = 15),
                     common.legend = FALSE, legend = "bottom")
 
-ggsave(here::here("results","second_stage", 'Figure 4.tiff'), width = 7, height = 14, units = "in", dpi = 600, compression = "lzw+p")
+#ggsave(here::here("results","second_stage", 'Figure 4.tiff'), width = 7, height = 14, units = "in", dpi = 600, compression = "lzw+p")
 
 
 ####Secondary analysis, Figure 4####
@@ -269,4 +270,4 @@ scatter_i2<-scatter_match(df_to_scatter, x=df_to_scatter$I2, y=df_to_scatter$rep
 figure5<- ggarrange(scatter_i2,
                     legend = "bottom")
 
-ggsave(here::here("results","second_stage", 'Figure 5.tiff'), width = 7, height = 6, units = "in", dpi = 600, compression = "lzw+p")
+#ggsave(here::here("results","second_stage", 'Figure 5.tiff'), width = 7, height = 6, units = "in", dpi = 600, compression = "lzw+p")

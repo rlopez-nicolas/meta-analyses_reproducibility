@@ -68,4 +68,4 @@ figure5b<- ggarrange(plt_stage1,
                       ncol = 1, nrow = 3)
 
 
-ggsave(here::here("results", 'Figure 6b.tiff'), width = 8, height = 12, units = "in", dpi = 600, compression = "lzw+p")
+#ggsave(here::here("results", 'Figure 6b.tiff'), width = 8, height = 12, units = "in", dpi = 600, compression = "lzw+p")
