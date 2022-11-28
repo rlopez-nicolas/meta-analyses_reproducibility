@@ -149,7 +149,7 @@ hist_primary_studies
 ```
 
 ## Process reproducibility 
-Figure 3 summarizes the primary data retrieval results. Based on the availability of primary data, either retrieved directly from the paper or upon request, `r df_process_rep$n[2]` meta-analyses (`r sprintf("%0.0f%%", df_process_rep$perc[2]*100)`, see Fig. 2a) were labelled as process reproducible. Of these `r df_process_rep$n[2]` meta-analyses, in about half of the cases the primary data was retrieved from a forest plot in the paper itself and in about a third of the cases the primary data was retrieved from supplementary files. Only in `r sprintf("%0.0f%%", df_source_primary_data$perc[1]*100)` of the cases the primary data was retrieved upon request (see Fig. 2b for further details). Although attempts were made to retrieve data for `r df_process_rep$n[1]+df_source_primary_data$n[1]` meta-analyses from `r sum(df_request$n)` different papers by emailing the corresponding authors, data was only retrieved for `r df_source_primary_data$n[1]` meta-analyses, from `r df_request$n[2]` different papers (`r sprintf("%0.0f%%", df_request$perc[2]*100)`, see Fig. 2c). For the remaining `r df_process_rep$n[1]` from `r df_request$n[1] + df_request$n[3]` different papers, a reply providing some reasons not to share was received in `r sprintf("%0.0f%%", df_request$perc[2]*100)` (see Fig 2c), whereas no reply was received for the remainder of the meta-analyses. Table 1 summarises the different reasons corresponding authors given when data was not provided upon request.
+Figure 3 summarizes the primary data retrieval results. Based on the availability of primary data, either retrieved directly from the paper or upon request, `r df_process_rep$n[2]` meta-analyses (`r sprintf("%0.0f%%", df_process_rep$perc[2]*100)`, see Fig. 3a) were labelled as process reproducible. Of these `r df_process_rep$n[2]` meta-analyses, in about half of the cases the primary data was retrieved from a forest plot in the paper itself and in about a third of the cases the primary data was retrieved from supplementary files. Only in `r sprintf("%0.0f%%", df_source_primary_data$perc[1]*100)` of the cases the primary data was retrieved upon request (see Fig. 3b for further details). Although attempts were made to retrieve data for `r df_process_rep$n[1]+df_source_primary_data$n[1]` meta-analyses from `r sum(df_request$n)` different papers by emailing the corresponding authors, data was only retrieved for `r df_source_primary_data$n[1]` meta-analyses, from `r df_request$n[2]` different papers (`r sprintf("%0.0f%%", df_request$perc[2]*100)`, see Fig. 3c). For the remaining `r df_process_rep$n[1]` from `r df_request$n[1] + df_request$n[3]` different papers, a reply providing some reasons not to share was received in `r sprintf("%0.0f%%", df_request$perc[2]*100)` (see Fig 2c), whereas no reply was received for the remainder of the meta-analyses. Table 1 summarises the different reasons corresponding authors given when data was not provided upon request.
 
 ```{r}
 
@@ -268,5 +268,11 @@ This research has been funded with a grant from the Spanish Ministry of Science 
 ## Supplemental Material
 
 Supplementary material available at: https://osf.io/fjhpw
+
+## Prior versions
+
+A version of this manuscript has been posted as a preprint on PsyArxiv: https://psyarxiv.com/gvqrn/
+
+
 
 # References
