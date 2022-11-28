@@ -215,7 +215,7 @@ figure3<- ggarrange(plt_process_rep,
                     labels = c("A", "B", "C"),
                     ncol = 1, nrow = 3, font.label = list(size = 14))
 
-#ggsave(here::here("results", 'Figure 3.tiff'), width = 10, height = 11, units = "in", dpi = 600, compression = "lzw+p")
+#ggsave(here::here("results", 'Figure 3.tiff'), width = 10, height = 11, bg = "white", units = "in", dpi = 600, compression = "lzw+p")
 
 
 ####Secondary analysis####

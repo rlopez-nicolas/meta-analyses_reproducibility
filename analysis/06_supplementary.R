@@ -41,4 +41,4 @@ figure_s1<-ggplot(aes(x=criteria), data = df_plot) +
         axis.text = element_text(vjust = 0, size = 12),
         axis.title = element_text(size = 14, face = "bold"))
 
-#ggsave(here::here("results", 'Figure S1.tiff'), width = 7, height = 7, units = "in", dpi = 600, compression = "lzw+p")
+#ggsave(here::here("results", 'Figure S1.tiff'), width = 7, height = 7, bg = "white", units = "in", dpi = 600, compression = "lzw+p")
