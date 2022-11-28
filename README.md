@@ -1,7 +1,7 @@
 # Analytical reproducibility of published meta-analyses on clinical psychological interventions
 
 ## General description
-This repository contains materials, data, and code related to this [project](https://osf.io/79j2t)
+This repository contains materials, data, and code related to this [project](https://osf.io/6cmzh/)
 
 ## Files
 
