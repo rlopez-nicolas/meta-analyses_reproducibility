@@ -14,6 +14,8 @@ Dear Dr. Flake,
 We are very grateful to you for offering us the opportunity of sending a revised version of our paper. We are also very grateful to all the Reviewers, as they have made interesting suggestions and good recommendations to improve the quality of our paper. 
 In the revised version of the paper we have tried to address all of your suggestions. Next, we provide point by point answers to the Reviewers’ comments and specify how we have addressed them in the revised manuscript.
 
+\newpage
+
 # Reviewer \#1
 
 \RC {The authors present their efforts to reproduce 217 published meta-analyses from Clinical Psychology. This is done systematically and thoughtfully.
@@ -113,6 +115,7 @@ The meta-analyses selected from the same paper were independent, that is based o
 
 Thanks again for taking your time providing very useful feedback. We appreciate how your suggestions have improved the manuscript. 
 
+\newpage
 
 # Reviewer \#2
 
@@ -127,7 +130,7 @@ We agree that this could have been more clearly specified. In order to improve o
 
 We have added a footnote on p.15 linking to the supplementary file:
 
->Furthermore, 15 were labelled as \textcolor{blue}{approximately reproduced or reproduced with minor adjustment} in a qualitative check because the discrepancy was probably explained by rounding issues, inverted signs for results (when effect sizes were reported in absolute values) and primary data, minor reporting errors, or minor adjustments in the analytical scheme^[Full details in Supplementary File at (add link)].
+>Furthermore, 15 were labelled as \textcolor{blue}{approximately reproduced or reproduced with minor adjustment} in a qualitative check because the discrepancy was probably explained by rounding issues, inverted signs for results (when effect sizes were reported in absolute values) and primary data, minor reporting errors, or minor adjustments in the analytical scheme^[Full details in Supplementary File at https://osf.io/fjhpw].
 
 
 \RC{- After the qualitative check, you relabel 15 meta-analyses as reproduced, because you were able to spot the reason for the discrepancy, right? I’d argue that having a good idea why something didn’t reproduce, doesn’t suddenly make the result reproducible. I think labelling these cases as “reproduced with issues” or “approximately reproduced” or something along those lines makes more sense, than simply calling them “reproduced”.}
@@ -224,6 +227,7 @@ Michèle Nuijten}
 
 Thanks again for your useful feedback, we really appreciate your help in improving the manuscript!
 
+\newpage
 
 # Reviewer \#3
 
