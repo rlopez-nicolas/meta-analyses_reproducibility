@@ -92,13 +92,24 @@ customized_barplot<- function(d, pal, title, legend, width=0.35, rate=TRUE){
 # title: desired plot title
 #
 
-scatter_match<- function(d, x, y, shape, shape_name, shape_labels, size, title)
+scatter_match<- function(d, x, y, shape, shape_name, shape_labels, size, title, size_constant = T){ 
+  if (size_constant == TRUE) {
+    
+  plt<-ggplot(d, aes(x=x, y=y, shape = shape)) +
+  geom_point(aes(col = shape), stroke = 1, size = size)  
+  } 
+
+else {
   
-  ggplot(d, aes(x=x, y=y, shape = shape, size = size)) +
-  geom_point(stroke = 1) + 
-  geom_abline(intercept = 0, slope = 1, colour = "#000000", size = 0.65) + 
-  scale_shape_manual(name = shape_name, labels = shape_labels, values = c(18, 3)) +
+  plt<-ggplot(d, aes(x=x, y=y, shape = shape, size = size)) +
+    geom_point(aes(col = shape), stroke = 1)  
+  
+}
+
+plt<- plt +  geom_abline(intercept = 0, slope = 1, colour = "#000000", size = 0.65) + 
+  scale_shape_manual(name = shape_name, labels = shape_labels, values = c(17, 4)) +
   scale_size_continuous(range = c(1, 6), guide = "none") + 
+  scale_color_manual(name = shape_name, labels = shape_labels, values = c("red", "black"))+
   theme_classic(base_size = 10) + 
   theme(legend.text = element_text(size = 13),
         legend.key.size = unit(.5,"cm"),
@@ -112,14 +123,14 @@ scatter_match<- function(d, x, y, shape, shape_name, shape_labels, size, title)
        x= "Original value"
   )
 
+}
 
-
-scatter_match2<- function(d, x, y, shape, color, color_name, color_labels, size, shape_name, shape_labels, title)
+scatter_match2<- function(d, x, y, color, color_name, color_labels, size, title)
   
-  ggplot(d, aes(x=x, y=y, shape = shape, color = color, size = size)) +
-  geom_point(stroke = 1) + 
+  ggplot(d, aes(x=x, y=y, color = color, size = size)) +
+  geom_point(stroke = 1, size = size, shape = 4) + 
   geom_abline(intercept = 0, slope = 1, colour = "#000000", size = 0.65) + 
-  scale_shape_manual(name = shape_name, labels = shape_labels, values = c(18, 3), guide = "none") +
+#  scale_shape_manual(name = shape_name, labels = shape_labels, values = c(18, 8), guide = "none") +
   scale_color_manual(name = color_name, labels = color_labels, values = c("#3444d9", "#b00b13"))+
   scale_size_continuous(range = c(1, 6), guide = "none")+
   theme_classic(base_size = 10) + 

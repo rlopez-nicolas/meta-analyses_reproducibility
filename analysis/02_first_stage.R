@@ -272,7 +272,7 @@ for (j in 1:nrow(df_mas)) {
 
 #Merge the original results and reproduced results
 
-df_mas<- df_mas %>% 
+df_mas2<- df_mas %>% 
   cbind(rep_k, rep_g,
         rep_ll_g, rep_ul_g, rep_ac_g,
         rep_z, rep_q, rep_i2) %>% 
@@ -289,11 +289,11 @@ df_mas<- df_mas %>%
   mutate(decision_error = ifelse(original_ci_test==rep_ci_test, "no_error", "error")) %>% 
   mutate(decision_error = factor(decision_error))
 
-#save(df_mas, file = here::here("results", "first_stage", "first_stage_results.Rdata"))
+#save(df_mas2, file = here::here("results", "first_stage", "first_stage_results.Rdata"))
 
 ####Selecting meta-analysis to be revised due to issues in reproductions####
 
-df_to_rev<- df_mas %>% 
+df_to_rev<- df_mas2 %>% 
   filter(numerical_error == "error" | decision_error =="error") 
 
 

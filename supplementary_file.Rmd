@@ -1,10 +1,17 @@
 ---
 title: "Supplementary Material" 
 output: pdf_document
+linestretch: 2
+fontsize: 12pt
+header-includes:
+   - \usepackage{caption}
+   - \captionsetup[table]{textfont={it}, labelfont={bf}, singlelinecheck=false, labelsep=newline}
+   - \captionsetup[figure]{textfont={it}, labelfont={bf}, singlelinecheck=false, labelsep=newline}
 ---
 
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
 ```
 
 
@@ -16,14 +23,77 @@ source(here::here("analysis", "06_supplementary.R"))
 
 ```
 
+# Inter-coder agreement 
+
+Out of the 25 papers selected to carry out independent double-coding, 21 had primary data available for one or more meta-analyses selected under the criteria explained in the main manuscript. Some disagreements or coding errors in the primary data were found in `r length(datasets_wo_error) - sum(datasets_wo_error)` (`r sprintf("%0.0f%%", round((1-mean(datasets_wo_error))*100,2))`) cases.  The intraclass correlation coefficient between the values coded by each coder was computed for each of those 21 datasets. The ICC values varied between `r round(min(icc_table$ICC), 3)` and `r max(icc_table$ICC)` (mean = `r round(mean(icc_table$ICC), 3)`). Full results of the inter-coder agreement are presented in Table S1. 
+
+```{r}
+
+
+kbl(
+  icc_table,
+  format = "latex",
+  booktabs = TRUE,
+  linesep = '\\addlinespace',
+  col.names = c("Paper", "ICC", "Full agreement"),
+  align = c("l", "l", "l"),
+  caption = "Full results of the inter-coder agreement"
+  ) %>% 
+  kable_styling(full_width = T, latex_options = "hold_position")
+  
+```
+
 # Sensitivity analysis using other possible criteria
 
 
 In the first stage, a cut-off point of 5% discrepancy between reported and reproduced results was set to screen meta-analyses. In Figure S1 this criterion is compared with other possibilities in absolute value. Figure S1 shows that the criterion used is one of the most liberal of those compared. Due to our design, the stage where the criterion was applied is only an initial screening, so the meta-analyses labelled by this criterion were reviewed at later stages in a qualitative way. Therefore, a more liberal criterion (minimizing false negatives, but increasing false positives) is more suitable. This criteria has the limitations of any relative index, but due to the mix of metrics included, it is also considered more appropriate. 
 
-``` {r, fig.width = 7, fig.height=5, fig.cap="Barplot displaying the number of meta-analyses labelled as numerical error under different criteria. The value used in the original design is 5%, the rest are different values of difference in absolute value between reported and reproduced result."}
+``` {r, fig.width = 7, fig.height=5, fig.cap="Barplot displaying the number of meta-analyses labelled as numerical error under different criteria. The value used in the original design is 5%, the other bars correspond to alternative criteria of the difference in absolute value between reported and reproduced result."}
+
 
 figure_s1
 
+```
+
+# Data availability over years
+
+The association between data availability and publication year was explored by fitting binary logistic regression models with publication year as predictor and process-reproducibility as dependent variable. We quantified the strength of the association by calculating odds ratios and 95% confidence intervals based on the profile likelihood. The analyses of the main manuscripts were mostly carried out at meta-analysis level. However, our dataset has a nested structure with meta-analyses nested within papers, which could compromise the assumption of independence of the regression model. Hence, we fitted the regression model at both meta-analysis and paper levels. Since we selected more than one meta-analysis from some of the papers, in `r sum(df_mas_pyear2$process_rep2==2)` cases primary data only could be retrieved for certain of the meta-analyses in that paper, but not for all the selected meta-analyses in that paper. To avoid misclassifications, these cases were excluded from the paper-level analyses. 
+Futhermore, as we work on an unrestricted random sample, the publication year distribution of the sample is clearly left-skewed. Therefore, the information provided by the data at the bottom range of the predictor is limited. For this reason, the analyses were complemented by fitting logistic regression models on a subset of the data excluding the papers published before 2010. In summary, we fitted four binary logistic regression model at both meta-analysis and paper levels and using the full dataset or a subset of meta-analyses published after 2010. Despite multiple contrasts performed, we did not introduce any corrections for multiple comparisons due to the exploratory nature of our analyses. Table S2 summarises the results of the models.
+
+```{r}
+
+
+kbl(
+  log_reg_results,
+  format = "latex",
+  booktabs = TRUE,
+  linesep = '\\addlinespace',
+  col.names = c("Level", "Before 10s exclusion", "Slope", "OR", "OR LL", "OR UL", "$p$"),
+  align = c("l", "l", "l","l", "l", "l","l"),
+  caption = "Binary logistic regression models results",
+  escape = FALSE
+  ) %>% 
+  kable_styling(full_width = T, latex_options = "hold_position") %>% 
+  column_spec(2, width = "2cm")
+  
+```
+\pagebreak
+Based on the results of the four models, there seems to be an association between the publication year and the possibility of retrieving primary data from a meta-analysis. We found that all 4 ORs computed were > 1, indicating a higher probability of retrieving data the more recent the publication year of the meta-analysis. Additionally, in only one of the cases (paper-level model without excluding cases published before 2010) did the 95%CI of the OR include a value < 1.
+\pagebreak
+
+# Qualitative check results 
+```{r}
+kbl(
+  table_qual,
+  format = "latex",
+  booktabs = TRUE,
+  #linesep = '\\addlinespace',
+  col.names = c("Case", "Reason"),
+  align = c("l", "l"),
+  caption = "Reasons found during the qualitative assessment"
+  ) %>% 
+  kable_styling(full_width = T, latex_options = "hold_position") %>% 
+  column_spec(2, width = "14cm")
+  
 ```
 

@@ -3,7 +3,7 @@ if(!require(pacman)){
 }
 library(pacman)
 
-pacman::p_load(readxl, tidyverse, papaja, kableExtra, english, knitr, here, DescTools, wesanderson, ggpubr)
+pacman::p_load(readxl, tidyverse, papaja, kableExtra, english, knitr, here, DescTools, wesanderson, ggpubr, rcrossref)
 
 source(here::here("analysis", "00_functions.R"))
 
@@ -13,7 +13,10 @@ source(here::here("analysis", "00_functions.R"))
 
 df_mas<- read_xlsx(here::here("data", 
                               "mas_original_results.xlsx"),
-                   col_names = TRUE)
+                   col_names = TRUE) %>% 
+  mutate(publication_year = as.double(str_sub(ID, -4))) %>% 
+  mutate(publication_year = ifelse(is.na(publication_year), 2017, publication_year)) %>% 
+  mutate(ma_x = seq(1:nrow(.)))
 
 
 ####Descriptives####
@@ -94,10 +97,8 @@ df_reasons<- df_mas %>%
                                                       Additional details were sent and after some email exchanges there was no further response."))))) %>% 
   group_by(final_results) %>% 
   tally() %>% 
-  cbind(MultinomCI(.$n, conf.level = 0.95, method = "sisonglaz"))%>%
-  mutate(porc = sprintf("%0.0f%%", est * 100)) %>% 
-  rename("Reason" = final_results, "N" = n, "%" = porc) %>% 
-  select(Reason, N, "%")
+  rename("Reason" = final_results, "N" = n) %>% 
+  select(Reason, N)
   
 
 
@@ -171,19 +172,51 @@ df_software<- df_mas %>%
   group_by(software) %>% 
   tally()
 
+#Citation count
+
+df_paper<- df_mas %>% 
+  group_by(order) %>% 
+  slice(1)
+
+#citation_count<- cr_citation_count(doi = df_paper$doi)
+
+#Adding missing counts from Google Scholar
+
+#citation_count$count[25]<- 445
+#citation_count$count[40]<- 6
+
+#Both Crossref and Google Scholar retrieved on 20/03/2023
+
+#save(citation_count, file = here::here("results", "citation_count.Rdata"))
+
+#Loading citation count retrieved on 20/03/2023
+
+load(here::here("results", "citation_count.Rdata"))
+
+#Descriptives citation count
+
+cc_mean<- round(mean(citation_count$count),3)
+cc_median<- median(citation_count$count)
+cc_sd<- round(sd(citation_count$count), 3)
+cc_range<- c(min(citation_count$count), max(citation_count$count))
+cc_iqr<- IQR(citation_count$count)
+cc_q1<-quantile(citation_count$count)[2]
+cc_q3<-quantile(citation_count$count)[4]
+
+
 ####Figures####
 
 #Figure 2
 
 hist_primary_studies<- ggplot(df_mas, aes(x = k)) + 
-  geom_histogram(alpha = 0.75, aes(y=..count..), position = "identity",
+  geom_histogram(alpha = 0.75, aes(y=after_stat(count)), position = "identity",
                  bins = 50, colour = "#b00b13", fill = "lavenderblush") +
   labs(x="Number of primary studies included",
        y= "Count")+
   geom_vline(aes(xintercept=k_median), colour= "#3444d9",
-             linetype="dashed", size=1)+
+             linetype="dashed", linewidth=1)+
   geom_vline(xintercept = c(k_q1, k_q3), colour = "#3444d9",
-             linetype="dashed", size=0.75, alpha = 0.5)+
+             linetype="dashed", linewidth=0.75, alpha = 0.5)+
   theme_minimal(base_size = 10)+
   theme_classic()+
   theme(
@@ -193,7 +226,50 @@ hist_primary_studies<- ggplot(df_mas, aes(x = k)) +
     panel.grid.major.y = element_blank(),
     panel.grid.major.x = element_blank())
 
-#ggsave(here::here("results", 'Figure 2.tiff'), width = 6 , height = 6 , units = "in", dpi = 600, compression = "lzw+p")
+hist_pubyear<- ggplot(df_paper, aes(x = publication_year)) + 
+  geom_histogram(alpha = 0.75, aes(y=after_stat(count)), position = "identity",
+                 bins = 20, colour = "#b00b13", fill = "lavenderblush") +
+  labs(x="Publication year",
+       y= "Count")+
+  geom_vline(aes(xintercept=median(publication_year)), colour= "#3444d9",
+             linetype="dashed", linewidth=1)+
+  geom_vline(xintercept = c(quantile(df_paper$publication_year)[2], quantile(df_paper$publication_year)[4]), colour = "#3444d9",
+             linetype="dashed", linewidth=0.75, alpha = 0.5)+
+  theme_minimal(base_size = 10)+
+  theme_classic()+
+  theme(
+    axis.title.y = element_text(colour = "black", size = 13, hjust = 0.5, margin = margin(t=5, b=10)),
+    axis.title.x = element_text(colour = "black", size = 13, hjust = 0.5, margin = margin(t=5, b=10)),
+    axis.text = element_text(colour = "black"),
+    panel.grid.major.y = element_blank(),
+    panel.grid.major.x = element_blank())
+
+hist_cit_count<- ggplot(citation_count, aes(x = count)) + 
+  geom_histogram(alpha = 0.75, aes(y=after_stat(count)), position = "identity",
+                 bins = 50, colour = "#b00b13", fill = "lavenderblush") +
+  labs(x="Number of citations",
+       y= "Count")+
+  geom_vline(aes(xintercept=median(count)), colour= "#3444d9",
+             linetype="dashed", linewidth=1)+
+  geom_vline(xintercept = c(quantile(citation_count$count)[2], quantile(citation_count$count)[4]), colour = "#3444d9",
+             linetype="dashed", linewidth=0.75, alpha = 0.5)+
+  theme_minimal(base_size = 10)+
+  theme_classic()+
+  theme(
+    axis.title.y = element_text(colour = "black", size = 13, hjust = 0.5, margin = margin(t=5, b=10)),
+    axis.title.x = element_text(colour = "black", size = 13, hjust = 0.5, margin = margin(t=5, b=10)),
+    axis.text = element_text(colour = "black"),
+    panel.grid.major.y = element_blank(),
+    panel.grid.major.x = element_blank())
+
+
+
+
+figure2<- ggarrange(hist_primary_studies, hist_pubyear + rremove("ylab"), hist_cit_count + rremove ("ylab"),
+                    labels = c("A", "B", "C"),
+                    ncol = 3, nrow = 1)
+
+#ggsave(here::here("results", 'Figure 2.tiff'), width = 12 , height = 4 , units = "in", dpi = 600, compression = "lzw+p")
 
 
 #Figure 3
@@ -202,7 +278,7 @@ hist_primary_studies<- ggplot(df_mas, aes(x = k)) +
 
 Moonrise3 <-rev(wes_palette("Moonrise3", n=5))
 
-plt_process_rep<- customized_barplot(df_process_rep, pal = Moonrise3[4:5], title = "Process reproducibility", legend = "Successful:", width = .35)
+plt_process_rep<- customized_barplot(df_process_rep, pal = Moonrise3[4:5], title = "Process reproducibility (Data availability)", legend = "Successful:", width = .35)
 
 plt_source_primary_data<- customized_barplot(df_source_primary_data, pal = c("#E1EFC4", Moonrise3), title = "Primary data source", legend = "Source:", width = .35)
 

@@ -92,14 +92,14 @@ df_to_reanalyse<- df_to_reanalyse %>%
   relocate(c(issues, qualitative_check), .after = last_col()) %>% 
   mutate(qualitative_check2= c(rep("rep", 7), "no_rep", "rep"))
 
-df_results_stage_3<- df_to_rev2 %>% 
+df_stage3_results<- df_to_rev2 %>% 
   filter(clarification_request_results != "Reply") %>% 
   mutate(qualitative_check2 = c(rep(NA, nrow(.)))) %>% 
   rbind(df_to_reanalyse) %>% 
   arrange(order)
 
 
-#save(df_results_stage_3, file = here::here("results", "third_stage", "third_stage_results.Rdata"))
+#save(df_stage3_results, file = here::here("results", "third_stage", "third_stage_results.Rdata"))
 
 
 
