@@ -373,7 +373,12 @@ Interesting point that we missed checking. It seems that the OSF repository was 
 
 \RC{- The authors responded "No" and "Not Applicable" to these prompts: "Does your paper rely on new or previously unpublished empirical data from your lab?", "If your paper presents new empirical work, does it include the following statement: “We report how we determined our sample size, all data exclusions, all manipulations, and all measures in the study”? It seems to me that both of these apply to the current manuscript (the nove empirical data is the results of the reproducibility assessments).}
 
-We don’t know if it’s possible to modify the form. The most relevant point on your suggestion is related to include a statement about how we determine our sample size. We have included the following statement (see p. 8): 
+We have modified in the resubmission form the answers to these prompts. Therefore, we have also included the “Reporting” subsection in the “Disclosures” section (see p. 7): 
+
+>## Reporting
+\textcolor{blue}{Below we report how we determined our sample size, all data exclusions, all manipulations, and all measures in the study.}
+
+Accordingly, we have included information on how we determine our sample size. We have included the following statements (see p. 8): 
 
 >Of this pool, 100 were randomly selected using a random number generator between 1 and the total number of meta-analyses identified...\textcolor{blue}{This sample size was based on our judgement of an acceptable trade-off between informativeness and feasibility.}
 From these 100 articles, each independent \textcolor{blue} {pairwise meta-analytic model of aggregate data fitted} on at least 10 primary studies was selected. In case no meta-analysis reported in a paper had at least 10 studies, the meta-analysis with the highest number of primary studies was selected, which was the case for 29 of the articles included in this report. \textcolor{blue}{This criterion was established to focus on the main meta-analyses of each paper, based on the assumption that the search strategies would be designed to maximise the number of primary studies included that were related to the main aims of the paper.}

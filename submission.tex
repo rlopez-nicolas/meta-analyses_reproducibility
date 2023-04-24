@@ -228,8 +228,8 @@ Reproducibility analysis \textcolor{blue}{of reported quantitative results} typi
 
 Previous research has revealed that there is room for improvement at different stages of the meta-analytic process pipeline. In this study our purpose is twofold. First, we broadened previous process reproducibility assessments by considering data availability on request and by contacting original authors to request required information to reproduce the meta-analysis. Second, we verified the outcome reproducibility of the meta-analyses that were process-reproducible using the available data. Where previous work focused on the reproducibility of primary effect sizes, we explored meta-analysis outcome reproducibility using the primary effects sizes already coded by the original authors.
 
-\hypertarget{method}{%
-\section{Method}\label{method}}
+\hypertarget{disclosures}{%
+\section{Disclosures}\label{disclosures}}
 
 \hypertarget{preregistration}{%
 \subsection{Preregistration}\label{preregistration}}
@@ -240,6 +240,14 @@ The pre-data analysis protocol (\url{https://doi.org/10.17605/OSF.IO/79J2T}) was
 \subsection{Data, materials, and online resources}\label{data-materials-and-online-resources}}
 
 Data and analysis script code are openly available at: \url{https://osf.io/6cmzh/}
+
+\hypertarget{reporting}{%
+\subsection{Reporting}\label{reporting}}
+
+\textcolor{blue}{Below we report how we determined our sample size, all data exclusions, all manipulations, and all measures in the study.}
+
+\hypertarget{method}{%
+\section{Method}\label{method}}
 
 \hypertarget{identification-and-selection-of-articles-and-meta-analyses}{%
 \subsection{Identification and selection of articles and meta-analyses}\label{identification-and-selection-of-articles-and-meta-analyses}}
@@ -253,9 +261,7 @@ Our unit of analysis was each independent meta-analysis selected under these cri
 \subsection{Retrieval of primary data}\label{retrieval-of-primary-data}}
 
 In order to be able to reproduce meta-analyses of \textcolor{blue}{aggregate data, primary-level}\footnote{By primary-level data we mean aggregate data from included primary studies.} effects sizes and their associated standard errors are required. These are generally computed from statistics retrieved from the primary studies such as means, standard deviations or sample sizes. We attempted to retrieve the least processed data possible. First, we sought for the statistics \textcolor{blue}{used to compute primary effect sizes (e.g., means, sd)}; second, we sought for the primary effects sizes \textcolor{blue}{already computed} and their standard errors (or, alternatively, the sampling variances): finally, we sought for the primary effects sizes and their confidence limits, from which the standard errors were approximated as follows:
-
 \[se_i = (\frac{UB_i - LB_i}{2z_{\alpha/2}})\]
-
 with \(se_i\) being the standard error of the ith effect size, \(UB_i\) and \(LB_i\) the upper and lower confidence limits of confidence interval for the ith effect size, and \(z_{\alpha/2}\) the \((1 - {\alpha/2})\%\) percentile of the standard normal distribution (usually, \(z_{\alpha/2} = 1.96\) assuming a two-sided 95\% confidence interval).
 
 \textcolor{blue}{On the other hand, efforts were also made to retrieve the most reusable data possible.} First, we searched for machine-readable data files through links leading to third-party repositories or in supplementary material hosted by the journal. Second, we looked for available data through tables or forest plots in the meta-analytic report itself, or in supplementary material. In these cases, the primary data had to be manually re-coded to reuse it. Finally, if the primary data of a meta-analysis were not directly available after the previous steps, we attempted to obtain the data through a request to the corresponding author identified in the associated paper. We sent an initial request in June 2021 and, if there was no reply, a subsequent reminder in October 2021. This reminder was sent to a more recent alternative email address if we were able to find one. If we were unable to obtain the data through the email request, the associated meta-analysis was labelled as not process reproducible.

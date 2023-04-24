@@ -93,7 +93,7 @@ source(here::here("analysis", "01_importing_data_and_descriptives.R"))
 
 ```
 
-# Method
+# Disclosures
 ## Preregistration
 The pre-data analysis protocol (https://doi.org/10.17605/OSF.IO/79J2T) was pre-registered on 19 October 2021. Any deviation from this protocol is explicitly acknowledged.
 
@@ -101,6 +101,11 @@ The pre-data analysis protocol (https://doi.org/10.17605/OSF.IO/79J2T) was pre-r
 
 Data and analysis script code are openly available at: https://osf.io/6cmzh/
 
+## Reporting
+
+\textcolor{blue}{Below we report how we determined our sample size, all data exclusions, all manipulations, and all measures in the study.}
+
+# Method
 ## Identification and selection of articles and meta-analyses 
 In previous research we identified a pool of 664 meta-analytic reports on clinical psychological interventions published between 2000 and 2020 through a systematic electronic search [@lopez-nicolas2021]. Of this pool, 100 were randomly selected using a random number generator between 1 and the total number of meta-analyses identified. The full search strategies and a summary of the screening process are available at: https://osf.io/z5vrn/, and the workflow of the random selection process is available at: https://osf.io/cp293/. \textcolor{blue}{This sample size was based on our judgement of an acceptable trade-off between informativeness and feasibility.}
 From these 100 articles, each independent \textcolor{blue} {pairwise meta-analytic model of aggregate data fitted} on at least 10 primary studies was selected. In case no meta-analysis reported in a paper had at least 10 studies, the meta-analysis with the highest number of primary studies was selected, which was the case for `r n_mas_less_10` of the articles included in this report. \textcolor{blue}{This criterion was established to focus on the main meta-analyses of each paper, based on the assumption that the search strategies would be designed to maximise the number of primary studies included that were related to the main aims of the paper.}
@@ -109,9 +114,7 @@ Our unit of analysis was each independent meta-analysis selected under these cri
 
 ## Retrieval of primary data
 In order to be able to reproduce meta-analyses of \textcolor{blue}{aggregate data, primary-level}^[By primary-level data we mean aggregate data from included primary studies.] effects sizes and their associated standard errors are required. These are generally computed from statistics retrieved from the primary studies such as means, standard deviations or sample sizes. We attempted to retrieve the least processed data possible. First, we sought for the statistics \textcolor{blue}{used to compute primary effect sizes (e.g., means, sd)}; second, we sought for the primary effects sizes \textcolor{blue}{already computed} and their standard errors (or, alternatively, the sampling variances): finally, we sought for the primary effects sizes and their confidence limits, from which the standard errors were approximated as follows: 
-
 $$se_i = (\frac{UB_i - LB_i}{2z_{\alpha/2}})$$
-
 with $se_i$ being the standard error of the ith effect size, $UB_i$ and $LB_i$ the upper and lower confidence limits of confidence interval for the ith effect size, and $z_{\alpha/2}$ the $(1 - {\alpha/2})\%$ percentile of the standard normal distribution (usually, $z_{\alpha/2} = 1.96$ assuming a two-sided 95% confidence interval).
 
 \textcolor{blue}{On the other hand, efforts were also made to retrieve the most reusable data possible.} First, we searched for machine-readable data files through links leading to third-party repositories or in supplementary material hosted by the journal. Second, we looked for available data through tables or forest plots in the meta-analytic report itself, or in supplementary material. In these cases, the primary data had to be manually re-coded to reuse it. Finally, if the primary data of a meta-analysis were not directly available after the previous steps, we attempted to obtain the data through a request to the corresponding author identified in the associated paper. We sent an initial request in June 2021 and, if there was no reply, a subsequent reminder in October 2021. This reminder was sent to a more recent alternative email address if we were able to find one. If we were unable to obtain the data through the email request, the associated meta-analysis was labelled as not process reproducible.
