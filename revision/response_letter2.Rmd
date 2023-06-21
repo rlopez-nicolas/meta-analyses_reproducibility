@@ -1,0 +1,81 @@
+---
+title       : "Reproducibility of published meta-analyses on clinical psychological
+  interventions"
+authors     : "Ruben Lopez-Nicolas et al."
+journal     : "Advances in Methods and Practices in Psychological Science"
+manuscript  : "AMPPS-22-0119"
+
+class       : "draft"
+output      : papaja::revision_letter_pdf
+---
+
+Dear Dr. Flake,
+
+Thank you again for taking your time reviewing and handling our manuscript. Next, we provide point by point answers to your comments and specify how we have addressed them in the revised manuscript.
+
+
+
+# Comments
+
+\RC {The Abstract:
+
+Thank you for clarifying the results in the abstract. I think it is an improvement, but I'm concerned the take-aways are unclear and would clarify a few points in the abstract.
+
+ -Your revised text says that 10 discrepancies were resolved  "after fixing a coding error" -- made by who, the authors of the meta-analysis or are these ones where you found your own error?}
+ 
+Here, we are referring to coding errors made by ourselves when we retrieved data from document formats. We agree that it could be a bit confusing. We have added the following clarification (see Abstract):
+
+>For 10 meta-analyses this discrepancy was solved after fixing a coding error \textcolor{blue}{of our data retrieval process}...
+
+\RC{-A summary sentence that clarifies the major takeaway in connection to data availability and then reproduction would be helpful. From my reading of the results it seems that at the end, there were 27 that were never resolved, meaning that the biggest threat to reproduction is data can't be located, once you can get the data the majority of studies can be reproduced (though not perfectly, which is important).}
+
+We have added a few additional sentences in the abstract related to data availability to highlight this issue, mention changes over time, and point out the type of data availability (see Abstract): 
+
+>The original data were retrieved for 67% (146/217) meta-analyses. \textcolor{blue}{While this rate showed an improvement over the years, in only 5\% of these cases was it possible to retrieve a data file ready for reuse.} Of these 146, 52 showed a discrepancy larger than 5% in the main results in the first stage. For 10 meta-analyses this discrepancy was solved after fixing a coding error \textcolor{blue}{of our data retrieval process} and for 15 of them it was considered approximately reproduced in a qualitative assessment. In the remaining meta-analyses (18%, 27/146), different issues were identified in an in-depth review, such as reporting inconsistencies, lack of data, or transcription errors. Nevertheless, the numerical discrepancies were mostly minor, with little or no impact on the conclusions. \textcolor{blue}{Overall, one of the biggest threats to the reproducibility of meta-analysis is related to data availability and current data sharing practices in meta-analysis.}
+
+\RC{Main text:
+
+-The last sentence on page 7 isn't clear, reproducing primary effect sizes versus the ones already coded by the original authors – the distinction is more clear on page 9, but please revise this sentence to be very direct as to what you are referring to a bit earlier in the paper.}
+
+Indeed, this sentence isn’t accurate. We have rephrased it (see p. 7): 
+
+>...Where previous work focused on the reproducibility of primary effect sizes \textcolor{blue}{by recoding data from primary studies}, we explored meta-analysis outcome reproducibility using the primary \textcolor{blue}{data} already coded by the original authors. \textcolor{blue}{Therefore, we attempted to retrieve the data shared by the authors of the meta-analysis.}
+
+
+\RC{-Even on page 9, I still think a bit more could be clarified on page 9 to make very obvious what was in the primary original study, in the meta-analysis done by the meta analytic authors, and then what you sought to do.}
+
+In the same vein, we have added a clarification in this section (see p. 9):
+
+>In order to be able to reproduce meta-analyses of aggregate data, primary-level^[By primary-level data we mean aggregate data from included primary studies.] effects sizes and their associated standard errors are required. These are generally computed from statistics retrieved from the primary studies such as means, standard deviations or sample sizes. We attempted to retrieve the least processed data \textcolor{blue}{shared by the authors of the meta-analysis...}
+
+
+\RC{Main Text, Supplement, and discussion:
+
+ I didn't find the logistic regression without any descriptive information in the supplement to be very helpful. I would like to see more descriptive information in the main text and the supplement and for the discussion to be updated accordingly. 
+ 
+ -In the main manuscript I think it would be best to provide some descriptive information about the publication year of the MA and data retrieval. Given you mention this in the discussion, having some results in the main paper is helpful, but I do not think a full statistical analysis is needed.  The year and data availability would be more useful with descriptive statistics – I'm thinking a crosstabs or a graph that shows the rate of availability by year and the sample size. We cannot make strong inferences here given the limited data, but you can cautiously note a trend.}
+ 
+Following your recommendation, we have complemented Figure 3a by adding three new bars displaying rates for different time periods (see Figure 3, p. 16).
+
+Additionally, we have mentioned that in the results section (see p. 13 and 14):
+
+>Figure 3 summarizes the primary data retrieval results. Based on the availability of primary data, either retrieved directly from the paper or upon request, 146 meta-analyses 146 meta-analyses (67%, see Fig. 3a) were labelled as process reproducible. \textcolor{blue}{Additionally, as the time span covered is fairly wide, the process reproducible rate was also computed for different time periods. The meta-analyses were grouped into five-year periods, except for the initial period, which was grouped into a ten-year period due to the limited number of meta-analyses available during the first five-year period, which consisted of only five meta-analyses. The process reproducibility rate was 41\%, (12/29), 59\%, (44/75), and 80\%, (90/113) for meta-analyses published between 2000 and 2010, 2011 and 2015, and 2016 and 2020, respectively (see Fig. 3a). This trend is further explored in the Supplementary file available at: https://osf.io/fjhpw.}
+
+Furthermore, we have slightly modified the discussion by mentioning the new results reported in the main text (see p. 22):
+
+>Nevertheless, a more positive sign comes from the positive association between publication year and the possibility of retrieving the data. \textcolor{blue}{The results tentatively suggest a trend of improving data availability over the years, with a notable rate of 80\% observed in meta-analyses published between 2016 and 2020...} 
+
+\RC{-You can keep the logistic regression if you'd like, but without sample size info by year and basic descriptive statistics, it isn't very interpretable, so this needs included with some detail in the supplement as well. Converting the coefficients into odds and then percentages would also help.}
+
+We have also added more information in this regard in the supplementary file (see p. 4 in Supplementary file): 
+
+>\textcolor{blue}{The publication year range of the included meta-analyses in our study is quite extensive. The initial pool, from which we randomly selected a sample, comprised meta-analytic reports published between 2000 and 2020, encompassing a span of two decades. For our analysis, we focused on a random sample of 100 of these meta-analytic reports.  From the 100 included reports, 217 independent meta-analyses were selected following the criteria explained in the ‘Identification and selection of articles and meta-analyses’ section of the main paper. These meta-analyses were published between 2001 and 2020 (mean = 2015.04; sd = 4.05; median =
+2016; interquartile range = 2012-2016). As an unrestricted random sample, the publication year distribution is clearly left-skewed, with 92.2\% of the included meta-analyses published between 2010 and 2020 (see Figure 2 of the main paper for the full distribution).}
+
+>\textcolor{blue}{As shown in the main paper (see Figure 3a), there appears to be an improvement in the rate of data availability over the years. The overall data availability rate for the full sample was found to be 67\%. However, when examining meta-analyses published within specific time periods, the rates varied. For meta-analyses published between 2000 and 2010, the data availability rate was 41\%. For those published between 2011 and 2015, the rate increased to 59\%. Notably, meta-analyses published between 2016 and 2020 exhibited the highest data availability rate of 80\%. These findings suggest a positive trend of improved data availability in more recent years.}
+
+Moreover, a new column reporting the percentage change associated with the ORs has been added to Table 2 of the Supplementary file:
+
+>Based on the results of the four models, there seems to be an association between the publication year and the possibility of retrieving primary data from a meta-analysis. We found that all 4 ORs computed were > 1, indicating a higher probability of retrieving data the more recent the publication year of the meta-analysis. \textcolor{blue}{Specifically, the odds increased from 11.85\% to 34.46\% per year...}
+
+

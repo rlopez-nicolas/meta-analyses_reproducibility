@@ -45,6 +45,38 @@ df_process_rep<- df_mas %>%
   rename(perc=est)%>%
   mutate_if(is.numeric, round, 2)
 
+#Process reproducibility by year
+
+df_process_rep2<- subset(df_mas, publication_year <= 2010) %>% 
+  select(order, ID, orign_data) %>% 
+  mutate(Item = ifelse(orign_data!="not_available", "Yes", "No")) %>% 
+  group_by(Item) %>% 
+  tally() %>% 
+  cbind(rbind(BinomCI(.$n[1], .$n[1]+.$n[2], conf.level = 0.95, method = "wilson"),
+              BinomCI(.$n[2], .$n[1]+.$n[2], conf.level = 0.95, method = "wilson")))%>%
+  rename(perc=est)%>%
+  mutate_if(is.numeric, round, 2)
+
+df_process_rep3<- subset(df_mas, publication_year > 2010 & publication_year <= 2015) %>% 
+  select(order, ID, orign_data) %>% 
+  mutate(Item = ifelse(orign_data!="not_available", "Yes", "No")) %>% 
+  group_by(Item) %>% 
+  tally() %>% 
+  cbind(rbind(BinomCI(.$n[1], .$n[1]+.$n[2], conf.level = 0.95, method = "wilson"),
+              BinomCI(.$n[2], .$n[1]+.$n[2], conf.level = 0.95, method = "wilson")))%>%
+  rename(perc=est)%>%
+  mutate_if(is.numeric, round, 2)
+
+df_process_rep4<- subset(df_mas, publication_year > 2015) %>% 
+  select(order, ID, orign_data) %>% 
+  mutate(Item = ifelse(orign_data!="not_available", "Yes", "No")) %>% 
+  group_by(Item) %>% 
+  tally() %>% 
+  cbind(rbind(BinomCI(.$n[1], .$n[1]+.$n[2], conf.level = 0.95, method = "wilson"),
+              BinomCI(.$n[2], .$n[1]+.$n[2], conf.level = 0.95, method = "wilson")))%>%
+  rename(perc=est)%>%
+  mutate_if(is.numeric, round, 2)
+
 
 #Source of primary data
 
@@ -278,20 +310,86 @@ figure2<- ggarrange(hist_primary_studies, hist_pubyear + rremove("ylab"), hist_c
 
 Moonrise3 <-rev(wes_palette("Moonrise3", n=5))
 
-plt_process_rep<- customized_barplot(df_process_rep, pal = Moonrise3[4:5], title = "Process reproducibility (Data availability)", legend = "Successful:", width = .35)
+plt_process_rep<- customized_barplot(df_process_rep, pal = Moonrise3[4:5], title = "Process reproducibility (Data availability)", legend = "Successful:", width = .65, NPos = 0.25) +
+  theme(axis.title.x=element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x=element_blank(),
+        plot.margin = unit(c(0.2,0,0,0), "cm"))
 
-plt_source_primary_data<- customized_barplot(df_source_primary_data, pal = c("#E1EFC4", Moonrise3), title = "Primary data source", legend = "Source:", width = .35)
+plt_process_rep2<- customized_barplot(df_process_rep2, pal = Moonrise3[4:5], title = "", legend = "Successful:", width = .3)+
+  theme(axis.title.x=element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x=element_blank(),
+        plot.margin = unit(c(0,0,0,1.5), "cm"))+
+  geom_text(
+    x = 1,
+    y = -0.025,
+    inherit.aes = FALSE,
+    label = "2000-2010",
+    check_overlap = TRUE,
+    hjust = 1,
+    fontface = 'bold',
+    size = 3.5
+  )
 
-plt_results_request<- customized_barplot(df_request, pal = Moonrise3[3:5], title = "Results of data requests", legend = "Result:", width = .35)
+plt_process_rep3<- customized_barplot(df_process_rep3, pal = Moonrise3[4:5], title = "", legend = "Successful:", width = .3)+
+  theme(axis.title.x=element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x=element_blank(),
+        plot.margin = unit(c(0,0,0,1.5), "cm"))+
+  geom_text(
+    x = 1,
+    y = -0.025,
+    inherit.aes = FALSE,
+    label = "2011-2015",
+    check_overlap = TRUE,
+    hjust = 1,
+    fontface = 'bold',
+    size = 3.5
+  )
 
+plt_process_rep4<- customized_barplot(df_process_rep4, pal = Moonrise3[4:5], title = "", legend = "Successful:", width = .3)+
+  theme(axis.title.x=element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x=element_blank(),
+        plot.margin = unit(c(0,0,0,1.5), "cm"))+
+  geom_text(
+    x = 1,
+    y = -0.025,
+    inherit.aes = FALSE,
+    label = "2016-2020",
+    check_overlap = TRUE,
+    hjust = 1,
+    fontface = 'bold',
+    size = 3.5
+  )
 
-figure3<- ggarrange(plt_process_rep,
+plt_source_primary_data<- customized_barplot(df_source_primary_data, pal = c("#E1EFC4", Moonrise3), title = "Primary data source", legend = "Source:", width = .15)+
+  theme(axis.title.x=element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x=element_blank(),
+        plot.margin = unit(c(0.2,0,1,0), "cm"))
+
+plt_results_request<- customized_barplot(df_request, pal = Moonrise3[3:5], title = "Results of data requests", legend = "Result:", width = .15) +
+  theme(plot.margin = unit(c(0.2,0,0,0), "cm"))
+
+figure3a<- ggarrange(plt_process_rep, 
+                 plt_process_rep2, 
+                 plt_process_rep3, 
+                 plt_process_rep4, 
+                 labels = NULL,
+                 ncol = 1, nrow = 4,
+                 common.legend = TRUE,
+                 legend = "bottom") +
+  theme(plot.margin = margin(0,0,0.5,0, "cm")) 
+
+figure3<- ggarrange(figure3a,
                     plt_source_primary_data,
                     plt_results_request,
                     labels = c("A", "B", "C"),
                     ncol = 1, nrow = 3, font.label = list(size = 14))
 
-#ggsave(here::here("results", 'Figure 3.tiff'), width = 10, height = 11, bg = "white", units = "in", dpi = 600, compression = "lzw+p")
+#ggsave(here::here("results", 'Figure 3.tiff'), width = 10, height = 13, bg = "white", units = "in", dpi = 600, compression = "lzw+p")
 
 
 ####Secondary analysis####

@@ -15,7 +15,7 @@ pacman::p_load(tidyverse, metafor)
 # width: desired bar width
 #
 
-customized_barplot<- function(d, pal, title, legend, width=0.35, rate=TRUE){
+customized_barplot<- function(d, pal, title, legend, width=0.35, rate=TRUE, NPos = 0.5){
   
   plt <- ggplot(data=d, aes(x=NA, y=perc, fill=Item)) +
     geom_bar(colour = 'black', stat="identity", width = width) +
@@ -40,7 +40,7 @@ customized_barplot<- function(d, pal, title, legend, width=0.35, rate=TRUE){
           axis.title.y=element_blank(),
           axis.text.y=element_blank(),
           axis.ticks.y=element_blank(),
-          axis.title.x=element_blank(),
+          axis.title.x= element_blank(),
           plot.title = element_text(size = 15, face = "bold")) 
   
   if (rate == TRUE) {  
@@ -61,7 +61,7 @@ customized_barplot<- function(d, pal, title, legend, width=0.35, rate=TRUE){
     ggtitle(sprintf("      %s", title)) +
     coord_flip(clip = 'off') +
     geom_text(
-      x = 0.5,
+      x = NPos,
       y = sum(d$perc),
       inherit.aes = FALSE,
       label = sprintf("N = %i", sum(d$n)),

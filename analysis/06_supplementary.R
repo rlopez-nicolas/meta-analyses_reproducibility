@@ -80,6 +80,8 @@ df_mas_pyear1<-read_xlsx(here::here("data",
   mutate(publication_year_centered = scale(publication_year)) %>% 
   mutate(process_rep = ifelse(orign_data!="not_available", 1, 0))
 
+  
+
 df_mas_pyear2<- df_mas_pyear1 %>% 
   group_by(order) %>% 
   mutate(process_rep2 = ifelse(all(orign_data=="not_available"), 0, ifelse(any(orign_data=="not_available"), 2, 1))) %>% 
@@ -102,7 +104,8 @@ log_reg_results<- data.frame(Level = c("Meta-analysis", "Paper", "Meta-analysis"
                              OR = c(odds.ratio(log_reg_malevel)$OR[2], odds.ratio(log_reg_paperlvl)$OR[2], odds.ratio(log_reg_malevel_10)$OR[2], odds.ratio(log_reg_paperlvl_10)$OR[2]),
                              "OR LL" = c(odds.ratio(log_reg_malevel)$`2.5 %`[2], odds.ratio(log_reg_paperlvl)$`2.5 %`[2], odds.ratio(log_reg_malevel_10)$`2.5 %`[2], odds.ratio(log_reg_paperlvl_10)$`2.5 %`[2]),
                              "OR UL" = c(odds.ratio(log_reg_malevel)$`97.5 %`[2], odds.ratio(log_reg_paperlvl)$`97.5 %`[2], odds.ratio(log_reg_malevel_10)$`97.5 %`[2], odds.ratio(log_reg_paperlvl_10)$`97.5 %`[2]),
-                             p = c(coef(summary(log_reg_malevel))[8], coef(summary(log_reg_paperlvl))[8], coef(summary(log_reg_malevel_10))[8], coef(summary(log_reg_paperlvl_10))[8])) %>%
+                             p = c(coef(summary(log_reg_malevel))[8], coef(summary(log_reg_paperlvl))[8], coef(summary(log_reg_malevel_10))[8], coef(summary(log_reg_paperlvl_10))[8])) %>% 
+  mutate("Percentage change" = ifelse(OR < 1, (1/OR - 1)*-100, (OR - 1)*100  )) %>% 
   mutate_if(is.numeric, round, 3)
   
 
