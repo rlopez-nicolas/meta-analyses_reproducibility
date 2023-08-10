@@ -5,9 +5,9 @@ This repository contains materials, data, and code related to this [project](htt
 
 ## Files
 
-• *manuscript.rmd* - RMD file that compiles the manuscript and runs all the necessary scripts. 
+• *submission.rmd* - RMD file that compiles the manuscript and runs all the necessary scripts. 
 
-• *manuscript.pdf* - pdf manuscript produced by *manuscript.rmd* 
+• *submission.pdf* - pdf manuscript produced by *submission.rmd* 
 
 • *apa.csl* - Citation style files that produces the reference section
 
@@ -21,7 +21,7 @@ This repository contains materials, data, and code related to this [project](htt
 
 ### analysis 
 
-R script files needed to carry out data preparation and analysis. They are run from the RMD *manuscript.rmd* file.
+R script files needed to carry out data preparation and analysis. They are run from the RMD *submission.rmd* file.
 
 ### data
 
@@ -30,5 +30,5 @@ In the sub-folder "corrected_data" are all the primary data files in their corre
 
 ### results 
 
-Contains the different results of each stage in the form of figures or tables. They are produced by the master script *manuscript.rmd*. 
+Contains the different results of each stage in the form of figures or tables. They are produced by the master script *submission.rmd*. 
 
